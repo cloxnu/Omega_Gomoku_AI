@@ -30,7 +30,7 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
 
 - [start.py](start.py) - Start the game, human vs AI, or human vs human, or AI vs AI.
 - ~~train.py - The training script, which can be used to train with different networks and saved models.~~
-- [configure.py](configure.py) - Configure the game, including board size, n-in-a-row, and AI search times.
+- [configure.py](configure.py) - Configure the game, including board size, n-in-a-row, and Monte Carlo Tree search times.
 - [game.conf](game.conf) - Configuration file.
 - [Function.py](Function.py) - Some functions.
 - [Game/](Game/)
