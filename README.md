@@ -45,4 +45,73 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
     - [AI_MCTS.py](Player/AI/AI_MCTS.py) - AI player with pure MCTS, implements class Game.
     
     
+## Usage
+
+You can try **Omega_Gomoku_AI** yourself, and there are two ways to try it.
+
+### via Docker
+
+If you have installed Docker, run the following command:
+
+```shell
+$ docker pull clox/omega_gomoku_ai:1.0
+```
+
+And, just run this:
+
+```shell
+$ docker run -it clox/omega_gomoku_ai:1.0
+```
+
+Success, It's a really simple way!
+
+### via PC/Mac/Linux
+
+Make sure you have a Python environment installed on your computer, and after cloning this repo, then run the following command:
+
+```shell
+$ pip install -r requirement.txt
+```
+
+If necessary, the command 'pip' should be changed to 'pip3'.
+
+In Mac/Linux, just run this:
+
+```shell
+$ bash game.sh
+```
+
+Or, you can also run:
+
+```shell
+$ python configure.py
+```
+
+to configure the game, and run:
+
+```shell
+$ python start.py
+```
+
+to start the game.
+
+Either installation way is fairly simple.
+
+## Enjoy...
+
+By default, this is a 5-in-a-row game played on an 8\*8 size of board, and AI with pure MCTS searches 2,000 times each turn.
+
+![AI thinking](Image/AI_thinking.png)
+
+![AI_moves](Image/AI_moves.png)
+
+Sometimes, AI with pure MCTS may do weird action, because 2,000 times searching is not enough in a 5-in-a-row game in fact. So you can set the board size to 3\*3 or 6\*6, set to a 3-in-a-row or 4-in-a-row game, like tac-tic-toe.
+
+Sure, It's a good idea to set 2,000 times to more, but it will take more time to think.
+
+Will, AI with MCTS + neural network can solve this problem.
+
+
+
+
 
