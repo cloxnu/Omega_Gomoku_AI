@@ -1,3 +1,5 @@
+![Starkidstory](Image/starkidstory_title.png)
+
 ![Header](Image/omega_title.png)
 
 # Omega_Gomoku_AI
