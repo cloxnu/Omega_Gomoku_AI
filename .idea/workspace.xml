@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b23fbfb-cfb2-4cae-969e-6983573a8956" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choose_player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/AI/AI_MCTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/AI/AI_MCTS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Human.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Human.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/configure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.conf" beforeDir="false" afterPath="$PROJECT_DIR$/game.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,22 +130,22 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="818" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1583405215820" />
-    <state width="1296" height="379" key="GridCell.Tab.0.bottom" timestamp="1583573764431">
+    <state width="1296" height="240" key="GridCell.Tab.0.bottom" timestamp="1583591945649">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="379" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764431" />
-    <state width="1296" height="379" key="GridCell.Tab.0.center" timestamp="1583573764431">
+    <state width="1296" height="240" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583591945649" />
+    <state width="1296" height="240" key="GridCell.Tab.0.center" timestamp="1583591945649">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="379" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764431" />
-    <state width="1296" height="379" key="GridCell.Tab.0.left" timestamp="1583573764430">
+    <state width="1296" height="240" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583591945649" />
+    <state width="1296" height="240" key="GridCell.Tab.0.left" timestamp="1583591945649">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="379" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764430" />
-    <state width="1296" height="379" key="GridCell.Tab.0.right" timestamp="1583573764431">
+    <state width="1296" height="240" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583591945649" />
+    <state width="1296" height="240" key="GridCell.Tab.0.right" timestamp="1583591945649">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="379" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764431" />
+    <state width="1296" height="240" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583591945649" />
     <state width="1296" height="254" key="GridCell.Tab.1.bottom" timestamp="1583568615211">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
@@ -162,6 +170,10 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="1699" y="195" width="1029" height="671" key="dock-window-1/0.23.1920.1011@0.23.1920.1011" timestamp="1583569380216" />
+    <state x="677" y="307" width="667" height="486" key="find.popup" timestamp="1583588908289">
+      <screen x="0" y="23" width="1920" height="1011" />
+    </state>
+    <state x="677" y="307" width="667" height="486" key="find.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1583588908289" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1583480365442">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>

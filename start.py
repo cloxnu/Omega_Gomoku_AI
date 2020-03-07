@@ -2,13 +2,19 @@ import Game.Game as GAME
 from Game.ConsoleBoard import ConsoleBoard
 from Player.Human import Human
 from Player.AI.AI_MCTS import AI_MCTS
+from choose_player import choose
 
 
 def start():
-    player1 = Human(name="Human1")
-    player2 = Human(name="Human2")
-    ai1 = AI_MCTS(name="AI_MCTS")
-    ai2 = AI_MCTS(name="AI_MCTS")
+    player1, name1 = choose("请输入先落子玩家。(人类: 1, AI: 2)\n"
+                            "Please input first player. (human: 1, AI: 2)\n"
+                            ": ")
+    player2, name2 = choose("请输入后落子玩家。(人类: 1, AI: 2)\n"
+                            "Please input second player. (human: 1, AI: 2)\n"
+                            ": ")
+    player1 = Human(name=name1) if player1 else AI_MCTS(name=name1)
+    player2 = Human(name=name2) if player2 else AI_MCTS(name=name2)
+
     board = ConsoleBoard()
 
     while True:
@@ -16,10 +22,10 @@ def start():
         board.render()
 
         # 采取动作。 Take action.
-        if board.current_player == GAME.x:
+        if board.current_player == GAME.o:
             player1.take_action(board)
         else:
-            ai1.take_action(board, is_output_analysis=True)
+            player2.take_action(board)
 
         # 游戏是否结束。 Game over?
         is_over, winner = board.result()

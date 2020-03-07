@@ -6,6 +6,12 @@ import Game.Game as GAME
 from Player.AI.MonteCarloTreeSearch import MonteCarloTreeSearch
 from Player.AI.MonteCarloTreeNode import TreeNode
 from Player.Player import Player
+from configure import Configure
+
+conf = Configure()
+conf.get_conf()
+AI_search_times = conf.conf_dict["AI_search_times"]
+is_output_analysis = conf.conf_dict["AI_is_output_analysis"]
 
 
 class AI_MCTS(MonteCarloTreeSearch, Player):
@@ -18,24 +24,25 @@ class AI_MCTS(MonteCarloTreeSearch, Player):
     def reset(self, board: Game):
         self.root = TreeNode(board, prior_prob=1.0)
 
-    def take_action(self, board: Game, is_output_analysis=False):
+    def take_action(self, board: Game):
         """
         下一步 AI 玩家应该执行的动作。
         What the AI player should do next.
-        :param is_output_analysis: 是否输出棋子胜率分析。 Whether to output chess piece win rate analysis.
         :param board: 当前棋盘。 Current board.
         :return: <tuple (i, j)> 采取行动时，落子的坐标。 Coordinate of the action.
         """
-        print("该 {} 落子了，它是 AI 选手。 It's turn to {}, AI player.".format(self.name, self.name))
+        print("该 {0} 落子了，它是 AI 选手。 It's turn to {0}, AI player.".format(self.name))
         print("思考中。。。 Thinking...")
 
         self.reset(board)
-        self.run(2000)
+        self.run(AI_search_times)
         action, _ = self.root.choose_best_child(0)
         board.step(action)
 
         if is_output_analysis:
             self.output_analysis()
+
+        print("AI 选手 {0} 落子于 ({1}, {2})\nAI player {0} moves ({1}, {2})".format(self.name, action[0], action[1]))
 
     def output_analysis(self):
         """
