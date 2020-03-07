@@ -26,24 +26,21 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
 
 ## 🏠 Code structure
 
-- [start.py](start.py) - [Detail](#start.py)
+- [start.py](start.py) - Start the game, human vs AI, or human vs human, or AI vs AI.
 - ~~train.py~~
-- [configure.py](configure.py)
-- [game.conf](game.conf)
-- [Function.py](Function.py)
+- [configure.py](configure.py) - Configure the game, including board size, n-in-a-row, and AI search times.
+- [game.conf](game.conf) - Configuration file.
+- [Function.py](Function.py) - Some functions.
 - [Game/](Game/)
-  - [Game.py](Game/Game.py)
-  - [ConsoleBoard.py](Game/ConsoleBoard.py)
+  - [Game.py](Game/Game.py) - An abstract class named Game, implemented by Console board and Visual board.
+  - [ConsoleBoard.py](Game/ConsoleBoard.py) - implements class Game.
 - [Player/](Player/)
-  - [Player.py](Player/Player.py)
-  - [Human.py](Player/Human.py)
-  - [AI/](Player/AI/)
-    - [MonteCarloTreeSearch.py](Player/AI/MonteCarloTreeSearch.py)
-    - [MonteCarloTreeNode.py](Player/AI/MonteCarloTreeNode.py)
-    - [AI_MCTS.py](Player/AI/AI_MCTS.py)
-    
-    
-### start.py
+  - [Player.py](Player/Player.py) - An abstract class named Player, implemented by Human and AIs.
+  - [Human.py](Player/Human.py) - Human player, implements class Game.
+  - [AI/](Player/AI/) - AIs.
+    - [MonteCarloTreeSearch.py](Player/AI/MonteCarloTreeSearch.py) - An abstract class MonteCarloTreeSearch, implements by all AIs using MCTS.
+    - [MonteCarloTreeNode.py](Player/AI/MonteCarloTreeNode.py) - Base class for nodes in Monte Carlo Tree.
+    - [AI_MCTS.py](Player/AI/AI_MCTS.py) - AI player with pure MCTS, implements class Game.
     
     
 
