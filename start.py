@@ -17,8 +17,7 @@ def start():
 
         # 采取动作。 Take action.
         if board.current_player == GAME.x:
-            # player1.take_action(board)
-            ai2.take_action(board, is_output_analysis=True)
+            player1.take_action(board)
         else:
             ai1.take_action(board, is_output_analysis=True)
 
