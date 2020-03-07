@@ -97,6 +97,7 @@ to start the game.
 
 Either installation way is fairly simple.
 
+
 ## Enjoy...
 
 By default, this is a 5-in-a-row game played on an 8\*8 size of board, and AI with pure MCTS searches 2,000 times each turn.
@@ -109,9 +110,9 @@ Sometimes, AI with pure MCTS may do weird action, because 2,000 times searching 
 
 Sure, It's a good idea to set 2,000 times to more, but it will take more time to think.
 
-Will, AI with MCTS + neural network can solve this problem.
+~~Will, AI with MCTS + neural network can solve this problem.~~
 
 
-
+## To be continued...
 
 
