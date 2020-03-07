@@ -17,11 +17,33 @@ This repo provides a ~~visual game interface~~, easy-to-use training process, an
 
 Enjoy yourself ~~~
 
-## 📖 References and thanks
+## 📖 References & thanks
 
 About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tree Search – beginners guide](https://int8.io/monte-carlo-tree-search-beginners-guide/), witten by [[int8]](https://github.com/int8).
 
 **Omega_Gomoku_AI** Inspired by [AlphaZero_Gomoku](https://github.com/junxiaosong/AlphaZero_Gomoku) and [tictactoe_mcts](https://github.com/zhuliquan/tictactoe_mcts).
 
+
 ## 🏠 Code structure
+
+- [start.py](start.py) - [Detail](#start.py)
+- ~~train.py~~
+- [configure.py](configure.py)
+- [game.conf](game.conf)
+- [Function.py](Function.py)
+- [Game/](Game/)
+  - [Game.py](Game/Game.py)
+  - [ConsoleBoard.py](Game/ConsoleBoard.py)
+- [Player/](Player/)
+  - [Player.py](Player/Player.py)
+  - [Human.py](Player/Human.py)
+  - [AI/](Player/AI/)
+    - [MonteCarloTreeSearch.py](Player/AI/MonteCarloTreeSearch.py)
+    - [MonteCarloTreeNode.py](Player/AI/MonteCarloTreeNode.py)
+    - [AI_MCTS.py](Player/AI/AI_MCTS.py)
+    
+    
+### start.py
+    
+    
 
