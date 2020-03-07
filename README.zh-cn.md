@@ -10,7 +10,7 @@
 <a href="https://starkidstory.com"><img src="Image/star_badge.png" height=20></a>
 <img src="Image/omega_badge.png" height=20/>
 <br/>
-<a href="https://github.com/CLOXnu/ConvenientImagePicker/blob/master/README.zh-cn.md"><img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat"/></a>
+<a href="https://github.com/CLOXnu/Omega_Gomoku_AI/blob/master/README.zh-cn.md"><img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat"/></a>
 </p>
 
 **Omega_Gomoku_AI** 不仅用于五子棋游戏，你还可以自定义棋盘大小，以及几子连珠这样的游戏规则。例如井字棋，就是个 3\*3 大小的棋盘，三子连珠。
@@ -67,7 +67,7 @@ $ docker run -it clox/omega_gomoku_ai:1.0
 
 ### 使用 PC/Mac/Linux
 
-Make sure you have a Python environment installed on your computer, and after cloning this repo, then run the following command:
+确保你的电脑安装了 Python 环境，在获取这个仓库之后，运行：
 
 ```shell
 $ pip install -r requirement.txt
