@@ -1,4 +1,4 @@
-![Starkidstory](Image/starkidstory_title.png)
+[![Starkidstory](Image/starkidstory_title.png)](https://starkidstory.com)
 
 ![Header](Image/omega_title.png)
 
@@ -19,7 +19,7 @@ Enjoy yourself ~~~
 
 ## 📖 References and thanks
 
-About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tree Search – beginners guide](https://int8.io/monte-carlo-tree-search-beginners-guide/). From user [[int8]](https://github.com/int8).
+About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tree Search – beginners guide](https://int8.io/monte-carlo-tree-search-beginners-guide/), witten by [[int8]](https://github.com/int8).
 
 **Omega_Gomoku_AI** Inspired by [AlphaZero_Gomoku](https://github.com/junxiaosong/AlphaZero_Gomoku) and [tictactoe_mcts](https://github.com/zhuliquan/tictactoe_mcts).
 
