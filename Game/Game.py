@@ -1,19 +1,25 @@
-from abc import ABCMeta, abstractmethod, abstractproperty
+from abc import ABCMeta, abstractmethod
+
 import numpy as np
 
 from Function import coordinates_set
+from configure import Configure
+
+
+conf = Configure()
+conf.get_conf()
 
 # 固定配置。 Fixed Configuration.
-o = 1
-x = -1
-empty = 0
+o = conf.conf_dict["o"]
+x = conf.conf_dict["x"]
+empty = conf.conf_dict["empty"]
 
 # 可变配置。 Changeable Configuration.
-n_in_a_row = 5   # 几子连珠。 How many pieces in a row.
+n_in_a_row = conf.conf_dict["n_in_a_row"]   # 几子连珠。 How many pieces in a row.
 o_win = n_in_a_row
 x_win = -n_in_a_row
-start_player = o  # start player
-board_size = 8   # 棋盘大小。 The size of the board.
+start_player = conf.conf_dict["start_player"]  # start player
+board_size = conf.conf_dict["board_size"]   # 棋盘大小。 The size of the board.
 
 
 class Game(metaclass=ABCMeta):

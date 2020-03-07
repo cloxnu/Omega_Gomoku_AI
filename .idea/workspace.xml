@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b23fbfb-cfb2-4cae-969e-6983573a8956" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/configure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +42,28 @@
       <recent name="$PROJECT_DIR$/UI" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.start">
+    <configuration name="configure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Omega_Gomoku_AI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/configure.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Omega_Gomoku_AI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -63,6 +88,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.start" />
+        <item itemvalue="Python.configure" />
       </list>
     </recent_temporary>
   </component>
@@ -99,42 +125,46 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="818" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1583405215820" />
-    <state width="1296" height="254" key="GridCell.Tab.0.bottom" timestamp="1583514316004">
+    <state width="1296" height="379" key="GridCell.Tab.0.bottom" timestamp="1583573764431">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316004" />
-    <state width="1296" height="254" key="GridCell.Tab.0.center" timestamp="1583514316003">
+    <state width="1296" height="379" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764431" />
+    <state width="1296" height="379" key="GridCell.Tab.0.center" timestamp="1583573764431">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316003" />
-    <state width="1296" height="254" key="GridCell.Tab.0.left" timestamp="1583514316003">
+    <state width="1296" height="379" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764431" />
+    <state width="1296" height="379" key="GridCell.Tab.0.left" timestamp="1583573764430">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316003" />
-    <state width="1296" height="254" key="GridCell.Tab.0.right" timestamp="1583514316004">
+    <state width="1296" height="379" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764430" />
+    <state width="1296" height="379" key="GridCell.Tab.0.right" timestamp="1583573764431">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316004" />
-    <state width="1296" height="254" key="GridCell.Tab.1.bottom" timestamp="1583514316005">
+    <state width="1296" height="379" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583573764431" />
+    <state width="1296" height="254" key="GridCell.Tab.1.bottom" timestamp="1583568615211">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316005" />
-    <state width="1296" height="254" key="GridCell.Tab.1.center" timestamp="1583514316004">
+    <state width="1296" height="254" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583568615211" />
+    <state width="1296" height="254" key="GridCell.Tab.1.center" timestamp="1583568615210">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316004" />
-    <state width="1296" height="254" key="GridCell.Tab.1.left" timestamp="1583514316004">
+    <state width="1296" height="254" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583568615210" />
+    <state width="1296" height="254" key="GridCell.Tab.1.left" timestamp="1583568615210">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316004" />
-    <state width="1296" height="254" key="GridCell.Tab.1.right" timestamp="1583514316004">
+    <state width="1296" height="254" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583568615210" />
+    <state width="1296" height="254" key="GridCell.Tab.1.right" timestamp="1583568615211">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583514316004" />
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1583371227538">
+    <state width="1296" height="254" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583568615211" />
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1583565457980">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1583371227538" />
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1583565457980" />
+    <state x="1699" y="195" width="1029" height="671" key="dock-window-1" timestamp="1583569380216">
+      <screen x="0" y="23" width="1920" height="1011" />
+    </state>
+    <state x="1699" y="195" width="1029" height="671" key="dock-window-1/0.23.1920.1011@0.23.1920.1011" timestamp="1583569380216" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1583480365442">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>

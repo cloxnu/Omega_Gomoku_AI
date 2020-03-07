@@ -8,6 +8,7 @@ def start():
     player1 = Human(name="Human1")
     player2 = Human(name="Human2")
     ai1 = AI_MCTS(name="AI_MCTS")
+    ai2 = AI_MCTS(name="AI_MCTS")
     board = ConsoleBoard()
 
     while True:
@@ -16,7 +17,8 @@ def start():
 
         # 采取动作。 Take action.
         if board.current_player == GAME.x:
-            player1.take_action(board)
+            # player1.take_action(board)
+            ai2.take_action(board, is_output_analysis=True)
         else:
             ai1.take_action(board, is_output_analysis=True)
 
