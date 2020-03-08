@@ -67,7 +67,7 @@ Add `--rm` after `-it` can automatically remove the container when it exits.
 
 That's all, It's a really simple way!
 
-*PS: The Docker image size is about **1 GB**.*
+*PS: The compressed size of the Docker image is about **350 MB**.*
 
 ### via PC/Mac/Linux
 
