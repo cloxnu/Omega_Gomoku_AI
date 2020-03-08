@@ -63,7 +63,9 @@ And, just run this:
 $ docker run -it clox/omega_gomoku_ai:1.0
 ```
 
-Success, It's a really simple way!
+Add `--rm` after `-it` can automatically remove the container when it exits.
+
+That's all, It's a really simple way!
 
 ### via PC/Mac/Linux
 
@@ -100,15 +102,19 @@ Either installation way is fairly simple.
 
 ## Enjoy...
 
-By default, this is a 5-in-a-row game played on an 8\*8 size of board, and AI with pure MCTS searches 2,000 times each turn.
+By default, this is a 5-in-a-row game played on an 8 * 8 size of board, and AI with pure MCTS searches 2,000 times each turn.
 
 ![AI thinking](Image/AI_thinking.png)
 
 ![AI_moves](Image/AI_moves.png)
 
-Sometimes, AI with pure MCTS may do weird action, because 2,000 times searching is not enough in a 5-in-a-row game in fact. So you can set the board size to 3\*3 or 6\*6, set to a 3-in-a-row or 4-in-a-row game, like tac-tic-toe.
+Sometimes, AI with pure MCTS may do weird action, because 2,000 times searching is not enough in a 5-in-a-row game in fact. So you can adjust the board size to 3 * 3 or 6 * 6, set to a 3-in-a-row or 4-in-a-row game, like tac-tic-toe.
 
-Sure, It's a good idea to set 2,000 times to more, but it will take more time to think.
+Sure, It's a good idea to adjust 2,000 times to more, but it will take more time to think.
+
+![10000_times](Image/10000_times.png)
+
+For example, I adjusted the number of Monte Carlo tree searches to 10,000 and played a 4-in-a-row game on a 6 * 6 board. It can be seen in the AI analysis that the Monte Carlo tree has traversed almost all of the board.
 
 ~~Will, AI with MCTS + neural network can solve this problem.~~
 
