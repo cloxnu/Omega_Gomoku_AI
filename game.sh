@@ -12,9 +12,8 @@ do
   echo "1: 配置游戏 Configure the game"
   echo "2: 运行游戏 Run"
   echo "---------------------------"
-  echo ": "
 
-  read input
+  read -p ": " input
   case $input in
   0)
     break
@@ -30,7 +29,6 @@ do
   *)
     echo "输入有误，请重新输入。"
     echo "The input is incorrect, please try again."
-    echo ": "
     continue
     ;;
   esac
