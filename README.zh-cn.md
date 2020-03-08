@@ -67,6 +67,8 @@ $ docker run -it clox/omega_gomoku_ai:1.0
 
 完成后，尽情玩耍。
 
+*PS: Docker 镜像大小约为 **1 GB**.*
+
 ### 使用 PC/Mac/Linux
 
 确保你的电脑安装了 Python 环境，在获取这个仓库之后，运行：
