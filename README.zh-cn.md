@@ -67,7 +67,7 @@ $ docker run -it clox/omega_gomoku_ai:1.0
 
 完成后，尽情玩耍。
 
-*PS: Docker 镜像大小约为 **1 GB**.*
+*PS: Docker 镜像的压缩大小约为 **350 MB**.*
 
 ### 使用 PC/Mac/Linux
 
