@@ -67,6 +67,8 @@ Add `--rm` after `-it` can automatically remove the container when it exits.
 
 That's all, It's a really simple way!
 
+*PS: The Docker image size is about **1 GB**.*
+
 ### via PC/Mac/Linux
 
 Make sure you have a Python environment installed on your computer, and after cloning this repo, then run the following command:
