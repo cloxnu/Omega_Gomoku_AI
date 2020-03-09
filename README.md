@@ -85,7 +85,7 @@ In Mac/Linux, just run this:
 $ bash game.sh
 ```
 
-Or, you can also run:
+is enough. Or, you can also run:
 
 ```shell
 $ python configure.py
