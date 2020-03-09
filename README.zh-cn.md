@@ -85,7 +85,7 @@ $ pip install -r requirement.txt
 $ bash game.sh
 ```
 
-或者，分开运行：
+就够了。或者，分开运行：
 
 ```shell
 $ python configure.py
