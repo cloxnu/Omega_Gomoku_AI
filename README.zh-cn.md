@@ -121,6 +121,11 @@ $ python start.py
 ~~带有神经网络的蒙特卡洛树搜索的 AI 玩家会解决这个问题。~~
 
 
+## 许可
+
+**Omega_Gomoku_AI** 已获得 MIT 许可，详见 [LICENSE](LICENSE)。
+
+
 ## 未完待续。。。
 
 
