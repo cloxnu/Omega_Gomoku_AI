@@ -121,6 +121,10 @@ For example, I adjusted the number of Monte Carlo tree searches to 10,000 and pl
 ~~Will, AI with MCTS + neural network can solve this problem.~~
 
 
+## License
+
+**Omega_Gomoku_AI** is released under MIT license. See [LICENSE](LICENSE) for details.
+
 ## To be continued...
 
 
