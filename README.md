@@ -123,7 +123,7 @@ For example, I adjusted the number of Monte Carlo tree searches to 10,000 and pl
 
 ## License
 
-**Omega_Gomoku_AI** is released under MIT license. See [LICENSE](LICENSE) for details.
+**Omega_Gomoku_AI** is licensed under MIT license. See [LICENSE](LICENSE) for details.
 
 ## To be continued...
 
