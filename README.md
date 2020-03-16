@@ -29,20 +29,28 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
 ## 🏠 Code structure
 
 - [start.py](start.py) - Start the game, human vs AI, or human vs human, or AI vs AI.
-- ~~train.py - The training script, which can be used to train with different networks and saved models.~~
+- [train.py](train.py) - The training script, which can be used to train with different networks and saved models.
 - [configure.py](configure.py) - Configure the game, including board size, n-in-a-row, and Monte Carlo Tree search times.
 - [game.conf](game.conf) - Configuration file.
 - [Function.py](Function.py) - Some functions.
+- [console_select.py](console_select.py) - Some console input functions.
 - [Game/](Game/)
   - [Game.py](Game/Game.py) - An abstract class named Game, implemented by Console board and Visual board.
   - [ConsoleBoard.py](Game/ConsoleBoard.py) - implements class Game.
 - [Player/](Player/)
   - [Player.py](Player/Player.py) - An abstract class named Player, implemented by Human and AIs.
   - [Human.py](Player/Human.py) - Human player, implements class Game.
-  - [AI/](Player/AI/) - AIs.
-    - [MonteCarloTreeSearch.py](Player/AI/MonteCarloTreeSearch.py) - An abstract class MonteCarloTreeSearch, implements by all AIs using MCTS.
-    - [MonteCarloTreeNode.py](Player/AI/MonteCarloTreeNode.py) - Base class for nodes in Monte Carlo Tree.
-    - [AI_MCTS.py](Player/AI/AI_MCTS.py) - AI player with pure MCTS, implements class Player and MonteCarloTreeSearch.
+  - [AI_MCTS.py](Player/AI/AI_MCTS.py) - AI player with pure MCTS, implements class Player and MonteCarloTreeSearch.
+  - [AI_MCTS_Net.py](Player/AI/AI_MCTS_Net.py) - AI player with MCTS and neural network, implements class Player and MontrCarloTreeSearch.
+- [AI/](AI/) - AIs.
+  - [MonteCarloTreeSearch.py](Player/AI/MonteCarloTreeSearch.py) - An abstract class MonteCarloTreeSearch, implements by all AIs using MCTS.
+  - [MonteCarloTreeNode.py](Player/AI/MonteCarloTreeNode.py) - Base class for nodes in Monte Carlo Tree.
+  - [Network/](AI/Network/) - Networks.
+    - [Network.py](AI/Network/Network.py) - An abstract class Network, implements by Networks.
+    - [PolicyValueNet_from_junxiaosong.py](AI/Network/PolicyValueNet_from_junxiaosong.py) - A policy-value network, composed by [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku).
+    - ~~PolicyValueNet_AlphaZero.py - A policy-value network from AlphaZero paper.~~
+- [Model/](Model/) - Models. Training data will be saved here.
+    
     
     
 ## Usage
