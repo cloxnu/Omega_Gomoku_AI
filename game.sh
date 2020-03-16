@@ -11,6 +11,7 @@ do
   echo "0: 退出 Exit"
   echo "1: 配置游戏 Configure the game"
   echo "2: 运行游戏 Run"
+  echo "3: 神经网络训练 Neural network training"
   echo "---------------------------"
 
   read -p ": " input
@@ -24,6 +25,10 @@ do
     ;;
   2)
     python start.py
+    continue
+    ;;
+  3)
+    python train.py
     continue
     ;;
   *)

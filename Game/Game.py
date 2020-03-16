@@ -1,61 +1,33 @@
-from abc import ABCMeta, abstractmethod
-
-import numpy as np
-
-from Function import coordinates_set
-from configure import Configure
+from Player.Player import Player
+from Game.Board import Board
+import Game.Board as BOARD
+from Game.BoardRenderer import BoardRenderer
 
 
-conf = Configure()
-conf.get_conf()
+def start_until_game_over(player1: Player, player2: Player, board_renderer: BoardRenderer = None):
+    """
+    玩家 player1 和玩家 player2 在 board 上进行游戏直到游戏结束，并输出获胜者。
+    Player player1 and player2 play on the board until the game is over, and output the winner.
+    :param player1: 玩家 1。 Player 1.
+    :param player2: 玩家 2。 Player 2.
+    :param board_renderer: 棋盘渲染器。 Checkerboard renderer.
+    :return: <int> board 返回的获胜者。 The winner returned by board.
+    """
+    board = Board()
+    while True:
+        # 渲染。 Render.
+        if board_renderer is not None:
+            board.render(board_renderer)
 
-# 固定配置。 Fixed Configuration.
-o = conf.conf_dict["o"]
-x = conf.conf_dict["x"]
-empty = conf.conf_dict["empty"]
+        # 执行动作。 Take action.
+        if board.current_player == BOARD.o:
+            player1.take_action(board, is_output_action=board_renderer is not None)
+        else:
+            player2.take_action(board, is_output_action=board_renderer is not None)
 
-# 可变配置。 Changeable Configuration.
-n_in_a_row = conf.conf_dict["n_in_a_row"]   # 几子连珠。 How many pieces in a row.
-o_win = n_in_a_row
-x_win = -n_in_a_row
-start_player = conf.conf_dict["start_player"]  # start player
-board_size = conf.conf_dict["board_size"]   # 棋盘大小。 The size of the board.
-
-
-class Game(metaclass=ABCMeta):
-
-    def __init__(self):
-        self.board = np.zeros((board_size, board_size), dtype=np.int32)
-        self.available_actions = coordinates_set(board_size, board_size)
-        self.current_player = start_player  # current player
-
-    @abstractmethod
-    def reset(self):
-        """
-        重置棋盘。
-        Reset board.
-        """
-
-    @abstractmethod
-    def render(self):
-        """
-        渲染当前棋盘。
-        Render current board.
-        """
-
-    @abstractmethod
-    def step(self, action):
-        """
-        执行下一步动作，调用后棋盘状态改变。
-        The next action is performed, and the state of the board changes after calling.
-        :param action: <tuple (i, j)> 落子的坐标。 Coordinates of the action.
-        :return: <Bool> 落子是否合法。 Validity of the action.
-        """
-
-    @abstractmethod
-    def result(self):
-        """
-        分析当前局面是否有玩家胜利，或者平局，或者未结束。
-        Analyze whether the current situation has a player victory, or a draw, or is not over.
-        :return: <tuple (is_over, winner)>
-        """
+        # 游戏是否结束。 Game over?
+        is_over, winner = board.result()
+        if is_over:
+            if board_renderer is not None:
+                board.render(board_renderer)
+            return winner

@@ -1,4 +1,4 @@
-from Game.Game import Game
+from Game.Board import Board
 from Player.Player import Player
 
 
@@ -7,10 +7,11 @@ class Human(Player):
     def __init__(self, name="Human"):
         self.name = name
 
-    def take_action(self, board: Game):
+    def take_action(self, board: Board, is_output_action=True):
         """
         电脑前的玩家应该采取动作了。 It's turn to you.
         :param board: 当前局面。 Current board.
+        :param is_output_action:
         :return: <tuple (i, j)> 采取行动时，落子的坐标。 Coordinate of the action.
         """
         print("该 {0} 落子了，它是人类选手。 It's turn to {0}, human player.".format(self.name))

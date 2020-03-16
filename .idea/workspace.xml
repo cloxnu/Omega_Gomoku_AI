@@ -2,7 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b23fbfb-cfb2-4cae-969e-6983573a8956" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Image/ai_wins.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AI/MonteCarloTreeNode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AI/MonteCarloTreeSearch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AI/Network/Network.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/Board.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/BoardRenderer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/ConsoleRenderer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/3_3/test.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/PolicyValueNet_from_junxiaosong.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-14-16-00.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-15-12-22.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-15-16-23.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-15-21-02.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-15-23-29.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-16-08-46.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-16-09-32.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-16-13-51.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-16-14-58.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test-3-16-18-13.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/8_5/hello.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/8_5/test-3-16-21:31.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/AI_MCTS.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/AI_MCTS_Net.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trash/trash_AI_MCTS.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/console_select.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Omega_Gomoku_AI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Omega_Gomoku_AI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Function.py" beforeDir="false" afterPath="$PROJECT_DIR$/Function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/ConsoleBoard.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/AI/AI_MCTS.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/AI/MonteCarloTreeNode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/AI/MonteCarloTreeSearch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Human.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Human.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.zh-cn.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.zh-cn.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/configure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.conf" beforeDir="false" afterPath="$PROJECT_DIR$/game.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.sh" beforeDir="false" afterPath="$PROJECT_DIR$/game.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +76,39 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/UI" />
+      <recent name="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4" />
+      <recent name="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/8_5" />
+      <recent name="$PROJECT_DIR$/Model/junxiaosong" />
+      <recent name="$PROJECT_DIR$/Player" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.start">
+    <configuration name="Function" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Omega_Gomoku_AI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Function.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="configure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Omega_Gomoku_AI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -52,6 +122,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/configure.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="console_select" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Omega_Gomoku_AI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/console_select.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,10 +172,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Omega_Gomoku_AI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.start" />
+        <item itemvalue="Python.train" />
         <item itemvalue="Python.configure" />
+        <item itemvalue="Python.console_select" />
+        <item itemvalue="Python.Function" />
       </list>
     </recent_temporary>
   </component>
@@ -117,54 +232,70 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="818" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583405215820">
+    <state x="818" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584079273124">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="818" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1583405215820" />
-    <state width="1296" height="254" key="GridCell.Tab.0.bottom" timestamp="1583603414965">
+    <state x="818" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1584079273124" />
+    <state x="986" y="273" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584077912597">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414965" />
-    <state width="1296" height="254" key="GridCell.Tab.0.center" timestamp="1583603414963">
+    <state x="986" y="273" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1584077912597" />
+    <state width="820" height="466" key="DebuggerActiveHint" timestamp="1584103387632">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414963" />
-    <state width="1296" height="254" key="GridCell.Tab.0.left" timestamp="1583603414963">
+    <state width="820" height="466" key="DebuggerActiveHint/0.23.1920.1011@0.23.1920.1011" timestamp="1584103387632" />
+    <state width="1072" height="328" key="GridCell.Tab.0.bottom" timestamp="1584367928084">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414963" />
-    <state width="1296" height="254" key="GridCell.Tab.0.right" timestamp="1583603414964">
+    <state width="1072" height="328" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584367928084" />
+    <state width="1072" height="328" key="GridCell.Tab.0.center" timestamp="1584367928083">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414964" />
-    <state width="1296" height="254" key="GridCell.Tab.1.bottom" timestamp="1583603414967">
+    <state width="1072" height="328" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584367928083" />
+    <state width="1072" height="328" key="GridCell.Tab.0.left" timestamp="1584367928083">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414967" />
-    <state width="1296" height="254" key="GridCell.Tab.1.center" timestamp="1583603414966">
+    <state width="1072" height="328" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584367928083" />
+    <state width="1072" height="328" key="GridCell.Tab.0.right" timestamp="1584367928083">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414966" />
-    <state width="1296" height="254" key="GridCell.Tab.1.left" timestamp="1583603414965">
+    <state width="1072" height="328" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584367928083" />
+    <state width="1072" height="376" key="GridCell.Tab.1.bottom" timestamp="1584365266267">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414965" />
-    <state width="1296" height="254" key="GridCell.Tab.1.right" timestamp="1583603414966">
+    <state width="1072" height="376" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584365266267" />
+    <state width="1072" height="376" key="GridCell.Tab.1.center" timestamp="1584365266267">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1296" height="254" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1583603414966" />
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1583565457980">
+    <state width="1072" height="376" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584365266267" />
+    <state width="1072" height="376" key="GridCell.Tab.1.left" timestamp="1584365266266">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1583565457980" />
+    <state width="1072" height="376" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584365266266" />
+    <state width="1072" height="376" key="GridCell.Tab.1.right" timestamp="1584365266267">
+      <screen x="0" y="23" width="1920" height="1011" />
+    </state>
+    <state width="1072" height="376" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584365266267" />
+    <state x="707" y="155" key="SettingsEditor" timestamp="1583763704255">
+      <screen x="0" y="23" width="1920" height="1011" />
+    </state>
+    <state x="707" y="155" key="SettingsEditor/0.23.1920.1011@0.23.1920.1011" timestamp="1583763704255" />
+    <state width="589" height="430" key="XDebugger.FullValuePopup" timestamp="1584340368457">
+      <screen x="0" y="23" width="1920" height="1011" />
+    </state>
+    <state width="589" height="430" key="XDebugger.FullValuePopup/0.23.1920.1011@0.23.1920.1011" timestamp="1584340368457" />
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1584315999256">
+      <screen x="0" y="23" width="1920" height="1011" />
+    </state>
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1584315999256" />
     <state x="1699" y="195" width="1029" height="671" key="dock-window-1" timestamp="1583569380216">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="1699" y="195" width="1029" height="671" key="dock-window-1/0.23.1920.1011@0.23.1920.1011" timestamp="1583569380216" />
-    <state x="677" y="307" width="667" height="486" key="find.popup" timestamp="1583588908289">
+    <state x="415" y="349" width="667" height="486" key="find.popup" timestamp="1584361585738">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="677" y="307" width="667" height="486" key="find.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1583588908289" />
+    <state x="415" y="349" width="667" height="486" key="find.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1584361585738" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1583480365442">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
@@ -173,5 +304,31 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="802" y="253" width="670" height="676" key="search.everywhere.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1583377400990" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Trash/trash_AI_MCTS.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
