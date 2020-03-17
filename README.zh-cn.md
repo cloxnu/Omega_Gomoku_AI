@@ -19,6 +19,10 @@
 
 玩得愉快～～
 
+## 👣 开发路程
+
+✅ 蒙特卡洛树搜索 -> ✅ 神经网络训练 -> 游戏可视化 -> 自定义博弈。
+
 ## 📖 参考文献和感谢
 
 关于算法，**Omega_Gomoku_AI** 参考于这篇文章：[Monte Carlo Tree Search – beginners guide](https://int8.io/monte-carlo-tree-search-beginners-guide/)，作者是 [int8](https://github.com/int8)。
