@@ -23,6 +23,10 @@ Enjoy yourself ~~~
 
 1.1 is available, training.py etc. were added.
 
+## 👣 Next step
+
+✅Monte Carlo tree -> ✅Train models -> Visual game interface -> Custom battle.
+
 ## 📖 References & thanks
 
 About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tree Search – beginners guide](https://int8.io/monte-carlo-tree-search-beginners-guide/), written by [int8](https://github.com/int8).
