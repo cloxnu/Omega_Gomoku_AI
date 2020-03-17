@@ -2,11 +2,11 @@ import Game.Board as BOARD
 import Game.Game as Game
 from Game.ConsoleRenderer import ConsoleRenderer
 
+from console_select import select_player, select_network, set_AI_conf
+
 from Player.Human import Human
 from Player.AI_MCTS import AI_MCTS
 from Player.AI_MCTS_Net import AI_MCTS_Net
-
-from console_select import select_player, select_network, set_AI_conf
 
 from configure import Configure
 
