@@ -19,6 +19,10 @@ This repo provides a ~~visual game interface~~, easy-to-use training process, an
 
 Enjoy yourself ~~~
 
+## ⬆️ Updates
+
+1.1 is available, training.py etc. were added.
+
 ## 📖 References & thanks
 
 About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tree Search – beginners guide](https://int8.io/monte-carlo-tree-search-beginners-guide/), written by [int8](https://github.com/int8).
@@ -62,23 +66,45 @@ You can try **Omega_Gomoku_AI** yourself, and there are two ways to try it.
 If you have installed Docker, run the following command:
 
 ```shell
-$ docker pull clox/omega_gomoku_ai:1.0
+$ docker pull clox/omega_gomoku_ai:1.1
 ```
 
-And, just run this:
+Then, just run this:
 
 ```shell
-$ docker run -it clox/omega_gomoku_ai:1.0
+$ docker run -it clox/omega_gomoku_ai:1.1
 ```
 
 Add `--rm` after `-it` can automatically remove the container when it exits.
 
+That's all, the above is the simplest usage, It's a really simple way!
+
+It is worth noting that if you want to save the training data on your own machine, you need to add `-v` to mount directory.
+
+```shell
+$ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:1.1
+```
+
+`[Path]` here should fill in the local model path you want to save or load. Remember, cannot use relative directory here.
+
 That's all, It's a really simple way!
 
-*PS:*
+> *PS:*
 
-- The compressed size of the Docker image is about **350 MB**.
-- [Docker accelerator](http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker) in China.
+> - [Homepage (clox/omega_gomoku_ai)](https://hub.docker.com/r/clox/omega_gomoku_ai) of this docker image.
+> - The compressed size of the Docker image is about **493 MB**.
+> - The Docker image is based on [tensorflow/tensorflow:2.0.0-py3](https://hub.docker.com/layers/tensorflow/tensorflow/2.0.0-py3/images/sha256-0b236338fac6c3361cf3ae1448f8c053994e260c1edc4fa63ed80adb3045abb2?context=explore).
+> - [Docker accelerator](http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker) in China.
+
+#### Example of running the simplest version with Docker
+
+Configuring...
+
+![config](Image/Config.gif)
+
+Running...
+
+![running](Image/Running.gif)
 
 
 ### via PC/Mac/Linux
@@ -111,6 +137,12 @@ $ python start.py
 
 to start the game.
 
+```shell
+$ python train.py
+```
+
+to train a model.
+
 Either installation way is fairly simple.
 
 
@@ -126,11 +158,17 @@ Sometimes, AI with pure MCTS may do weird action, because 2,000 times searching 
 
 Sure, It's a good idea to adjust 2,000 times to more, but it will take more time to think.
 
+Now, we open the choice of greedy value, you can adjust the exploration degree of Monte Carlo tree search by yourself.
+
 ![10000_times](Image/10000_times.png)
 
 For example, I adjusted the number of Monte Carlo tree searches to 10,000 and played a 4-in-a-row game on a 6 * 6 board. It can be seen in the AI analysis that the Monte Carlo tree has traversed almost all of the board.
 
-~~Will, AI with MCTS + neural network can solve this problem.~~
+Will, AI with MCTS + neural network can solve this problem.
+
+Training is available now.
+
+![training](Image/training.png)
 
 
 ## License
