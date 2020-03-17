@@ -44,8 +44,8 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
 - [Player/](Player/)
   - [Player.py](Player/Player.py) - An abstract class named Player, implemented by Human and AIs.
   - [Human.py](Player/Human.py) - Human player, implements class Game.
-  - [AI_MCTS.py](Player/AI/AI_MCTS.py) - AI player with pure MCTS, implements class Player and MonteCarloTreeSearch.
-  - [AI_MCTS_Net.py](Player/AI/AI_MCTS_Net.py) - AI player with MCTS and neural network, implements class Player and MonteCarloTreeSearch.
+  - [AI_MCTS.py](Player/AI_MCTS.py) - AI player with pure MCTS, implements class Player and MonteCarloTreeSearch.
+  - [AI_MCTS_Net.py](Player/AI_MCTS_Net.py) - AI player with MCTS and neural network, implements class Player and MonteCarloTreeSearch.
 - [AI/](AI/) - AIs.
   - [MonteCarloTreeSearch.py](AI/MonteCarloTreeSearch.py) - An abstract class MonteCarloTreeSearch, implements by all AIs using MCTS.
   - [MonteCarloTreeNode.py](AI/MonteCarloTreeNode.py) - Base class for nodes in Monte Carlo Tree.
