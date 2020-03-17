@@ -40,11 +40,11 @@
 - [Player/](Player/)
   - [Player.py](Player/Player.py) - 抽象类 Player, 被人类玩家 (Human) 和 AI 玩家实现。
   - [Human.py](Player/Human.py) - 人类玩家，实现类 Player.
-  - [AI_MCTS.py](Player/AI/AI_MCTS.py) - 纯蒙特卡洛树搜索的 AI 玩家，实现类 Player, MonteCarloTreeSearch.
-  - [AI_MCTS_Net.py](Player/AI/AI_MCTS_Net.py) - 蒙特卡洛树搜索 + 神经网络 AI 玩家，实现类 Player, MonteCarloTreeSearch.
+  - [AI_MCTS.py](Player/AI_MCTS.py) - 纯蒙特卡洛树搜索的 AI 玩家，实现类 Player, MonteCarloTreeSearch.
+  - [AI_MCTS_Net.py](Player/AI_MCTS_Net.py) - 蒙特卡洛树搜索 + 神经网络 AI 玩家，实现类 Player, MonteCarloTreeSearch.
 - [AI/](Player/AI/) - AIs.
-  - [MonteCarloTreeSearch.py](Player/AI/MonteCarloTreeSearch.py) - 抽象类 MonteCarloTreeSearch，被所有使用蒙特卡洛树搜索的 AI 实现。
-  - [MonteCarloTreeNode.py](Player/AI/MonteCarloTreeNode.py) - 蒙特卡洛树节点的基类。
+  - [MonteCarloTreeSearch.py](AI/MonteCarloTreeSearch.py) - 抽象类 MonteCarloTreeSearch，被所有使用蒙特卡洛树搜索的 AI 实现。
+  - [MonteCarloTreeNode.py](AI/MonteCarloTreeNode.py) - 蒙特卡洛树节点的基类。
   - [Network/](AI/Network/) - 神经网络。
     - [Network.py](AI/Network/Network.py) - 抽象类 Network，被神经网络实现。
     - [PolicyValueNet_from_junxiaosong.py](AI/Network/PolicyValueNet_from_junxiaosong.py) - 一个策略价值网络, 作者是 [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku)。
