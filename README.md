@@ -4,7 +4,7 @@
 
 # Omega_Gomoku_AI
 
-**Omega_Gomoku_AI** is a Gomoku game AI based on Monte Carlo Tree Search. It's written in Python. 
+**Omega_Gomoku_AI** is a Gomoku game AI based on Monte Carlo Tree Search. It's written in Python. The neural network part uses the Keras framework.
 
 <p align="center">
 <a href="https://starkidstory.com"><img src="Image/star_badge.png" height=20></a>
@@ -109,7 +109,7 @@ Running...
 
 ### via PC/Mac/Linux
 
-Make sure you have a Python environment installed on your computer, and after cloning this repo, then run the following command:
+Make sure you have a Keras backend (Tensorflow) environment installed on your computer, and after cloning this repo, then run the following command:
 
 ```shell
 $ pip install -r requirement.txt
