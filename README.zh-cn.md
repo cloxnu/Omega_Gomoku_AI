@@ -11,6 +11,7 @@
 <img src="Image/omega_badge.png" height=20/>
 <br/>
 <a href="https://github.com/CLOXnu/Omega_Gomoku_AI/blob/master/README.zh-cn.md"><img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat"/></a>
+<a href="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI"><img src="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI.svg?branch=master"/></a>
 </p>
 
 **Omega_Gomoku_AI** 不仅用于五子棋游戏，你还可以自定义棋盘大小，以及几子连珠这样的游戏规则。例如井字棋，就是个 3 * 3 大小的棋盘，三子连珠。
@@ -65,13 +66,13 @@
 如果你安装了 Docker，那么执行如下命令：
 
 ```shell
-$ docker pull clox/omega_gomoku_ai:1.1
+$ docker pull clox/omega_gomoku_ai:latest
 ```
 
 然后，执行：
 
 ```shell
-$ docker run -it clox/omega_gomoku_ai:1.1
+$ docker run -it clox/omega_gomoku_ai:latest
 ```
 
 在 `-it` 后添加 `--rm` 可以在容器退出后自动删除容器。
@@ -79,7 +80,7 @@ $ docker run -it clox/omega_gomoku_ai:1.1
 以上是最简单版本的 Docker 容器配置方式，但如果你想要训练网络且希望将模型保存到本地，那么需要添加 `-v` 参数来挂载本地目录。
 
 ```shell
-$ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:1.1
+$ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:latest
 ```
 
 这里的 `[Path]` 需要填写你想要挂载的本地目录，切记不可以是相对路径。
