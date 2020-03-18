@@ -11,7 +11,10 @@
 <img src="Image/omega_badge.png" height=20/>
 <br/>
 <a href="https://github.com/CLOXnu/Omega_Gomoku_AI/blob/master/README.zh-cn.md"><img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat"/></a>
+<a href="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI"><img src="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI.svg?branch=master"/></a>
 </p>
+
+[![Build Status](https://travis-ci.org/CLOXnu/Omega_Gomoku_AI.svg?branch=master)](https://travis-ci.org/CLOXnu/Omega_Gomoku_AI)
 
 **Omega_Gomoku_AI** is not only used for Gomoku game, but you can also customize the size of the board and an n-in-a-row game. Tic-tac-toe, for example, is a 3-in-a-row game, and played on a board of size 3.
 
@@ -70,13 +73,13 @@ You can try **Omega_Gomoku_AI** yourself, and there are two ways to try it.
 If you have installed Docker, run the following command:
 
 ```shell
-$ docker pull clox/omega_gomoku_ai:1.1
+$ docker pull clox/omega_gomoku_ai:latest
 ```
 
 Then, just run this:
 
 ```shell
-$ docker run -it clox/omega_gomoku_ai:1.1
+$ docker run -it clox/omega_gomoku_ai:latest
 ```
 
 Add `--rm` after `-it` can automatically remove the container when it exits.
@@ -86,7 +89,7 @@ That's all, the above is the simplest usage, It's a really simple way!
 It is worth noting that if you want to save the training data on your own machine, you need to add `-v` to mount directory.
 
 ```shell
-$ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:1.1
+$ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:latest
 ```
 
 `[Path]` here should fill in the local model path you want to save or load. Remember, cannot use relative directory here.
