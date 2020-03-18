@@ -22,7 +22,7 @@ Enjoy yourself ~~~
 
 ## ⬆️ Updates
 
-1.1 is available, training.py etc. were added.
+1.2 is available, training.py etc. were added.
 
 ## 👣 Next step
 
