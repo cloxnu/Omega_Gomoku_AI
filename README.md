@@ -14,8 +14,6 @@
 <a href="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI"><img src="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI.svg?branch=master"/></a>
 </p>
 
-[![Build Status](https://travis-ci.org/CLOXnu/Omega_Gomoku_AI.svg?branch=master)](https://travis-ci.org/CLOXnu/Omega_Gomoku_AI)
-
 **Omega_Gomoku_AI** is not only used for Gomoku game, but you can also customize the size of the board and an n-in-a-row game. Tic-tac-toe, for example, is a 3-in-a-row game, and played on a board of size 3.
 
 This repo provides a ~~visual game interface~~, easy-to-use training process, and easy-to-understand code. 
