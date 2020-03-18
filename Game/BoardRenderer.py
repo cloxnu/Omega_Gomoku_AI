@@ -8,5 +8,5 @@ class BoardRenderer(metaclass=ABCMeta):
         """
         棋盘渲染。
         The board rendering.
-        :param board: 棋盘。 The checkerboard.
+        :param board: 棋盘。 The board.
         """

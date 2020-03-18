@@ -9,7 +9,7 @@ class ConsoleRenderer(BoardRenderer):
         """
         以控制台方式渲染当前棋盘。
         Render the current board in console mode
-        :param board: 棋盘。 The checkerboard.
+        :param board: 棋盘。 The board.
         """
         # 建立一个 16 * 16 的二维数组。 Build a 16 * 16 array.
         print_array = [["" for _ in range(BOARD.board_size + 1)] for _ in range(BOARD.board_size + 1)]

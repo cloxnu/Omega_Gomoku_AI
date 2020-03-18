@@ -47,7 +47,7 @@ def select_player(prompt, allowed_input):
     return choose_value, input_name
 
 
-def set_AI_conf(search_times=2000, greedy_value=1.4):
+def set_AI_conf(search_times=2000, greedy_value=5.0):
     """
     设定 AI 玩家的配置。
     Set AI player configuration.

@@ -51,7 +51,7 @@ class TreeNode(object):
 
         return child_node
 
-    def UCT_function(self, c=1.4):
+    def UCT_function(self, c=5.0):
         greedy = c * self.prior_prob * np.sqrt(self.parent.visited_times/(1 + self.visited_times))
         # self.uct = (c * self.prior_prob * np.sqrt(self.parent.visited_times) / (1 + self.visited_times))
         # return self.reward + self.uct
@@ -59,16 +59,13 @@ class TreeNode(object):
             return greedy
         return self.reward / self.visited_times + greedy
 
-    def choose_best_child(self, c=1.4):
+    def choose_best_child(self, c=5.0):
         """
         依据 UCT 函数，选择一个最佳的子节点。
         According to the UCT function, select an optimal child node.
+        :param c: 贪婪值。 greedy value.
         :return: <(action(x_axis, y_axis), TreeNode)> 最佳的子节点。 An optimal child node.
         """
-        ucts = []
-        for child in self.children.values():
-            ucts.append(child.UCT_function(c))
-
         return max(self.children.items(), key=lambda child_node: child_node[1].UCT_function(c))
 
     def backpropagate(self, value):

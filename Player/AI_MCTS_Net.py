@@ -13,7 +13,7 @@ from AI.Network.PolicyValueNet_from_junxiaosong import board_to_xlabel
 class AI_MCTS_Net(MonteCarloTreeSearch, Player):
 
     def __init__(self, policy_value_function, name="AI_MCTS_Net",
-                 is_training=False, search_times=2000, is_output_analysis=True, greedy_value=1.4):
+                 is_training=False, search_times=2000, is_output_analysis=True, greedy_value=5.0):
         """
         AI_MCTS_Net 是一个实现 MonteCarloTreeSearch 的 Player，并通过 policy_value_function 进行落子概率决策。
         AI_MCTS_Net is a Player that implements MonteCarloTreeSearch,
@@ -50,7 +50,7 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         self.reset()
         self.run(board, self.search_times)
 
-        # 取得落子动作。 Get action.
+        # 取得落子动作和概率。 Get actions and probabilities.
         actions, probs = self.get_action_probs()
 
         # action -> flatten_action
@@ -73,8 +73,8 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         if self.is_output_analysis:
             action_probs = np.zeros((BOARD.board_size, BOARD.board_size), dtype=np.float64)
             # probs -> action_probs
-            for action, prob in zip(actions, probs):
-                action_probs[action[0], action[1]] = prob
+            for one_action, one_prob in zip(actions, probs):
+                action_probs[one_action[0], one_action[1]] = one_prob
 
             self.output_analysis(action_probs)
 
@@ -87,6 +87,7 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         Self-play, return to all boards after the game,
         the probability of losing all positions,
         and reward of victory or lose.
+        :param temp: 温度参数（探索程度）。 Temperature parameter (Degree of exploration).
         :return: [(boards, all_action_probs, values)]
         """
         board_inputs, all_action_probs, current_player = [], [], []
@@ -96,10 +97,11 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
             self.reset()
             self.run(board, self.search_times)
 
+            # 取得落子动作和概率。 Get actions and probabilities.
             actions, probs = self.get_action_probs(temp=temp)
             action_probs = np.zeros((BOARD.board_size, BOARD.board_size), dtype=np.float64)
 
-            # flatten_probs -> probs
+            # actions, probs -> action_probs
             for action, prob in zip(actions, probs):
                 action_probs[action[0], action[1]] = prob
 
@@ -193,8 +195,11 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
             board = copy.deepcopy(start_board)
             if i % 20 == 0:
                 print("\rrunning: {} / {}".format(i, times), end="")
+
+            # 扩展子节点。 Expand node.
             node, value = self.traverse(self.root, board)
 
+            # 反向传输。 Backpropagate.
             node.backpropagate(-value)
         print("\r                      ", end="\r")
 
@@ -213,11 +218,6 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
             action, node = node.choose_best_child(c=self.greedy_value)
             board.step(action)
 
-        action_probs, value = self.policy_value_function(board)
-
-        for action, probability in action_probs:
-            _ = node.expand(action, probability)
-
         # 是否结束。 game over?
         is_over, winner = board.result()
         if is_over:
@@ -227,4 +227,13 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
                 value = -1
             else:
                 value = 0
+            return node, value
+
+        # 使用策略价值函数决策当前动作概率及评估价值。
+        # Use the strategy value function to decide the current action probability and evaluate the value.
+        action_probs, value = self.policy_value_function(board)
+
+        for action, probability in action_probs:
+            _ = node.expand(action, probability)
+
         return node, value

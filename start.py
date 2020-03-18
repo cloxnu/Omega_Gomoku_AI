@@ -19,7 +19,7 @@ def start():
         if player_selected == 1:
             return Human(name=name)
         elif player_selected == 2:
-            search_times, greedy_value = set_AI_conf(search_times=2000, greedy_value=1.4)
+            search_times, greedy_value = set_AI_conf(search_times=2000, greedy_value=5.0)
             return AI_MCTS(name=name,
                            search_times=search_times,
                            is_output_analysis=conf.conf_dict["AI_is_output_analysis"],

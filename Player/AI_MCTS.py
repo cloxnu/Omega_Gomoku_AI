@@ -11,7 +11,7 @@ from Player.Player import Player
 
 class AI_MCTS(MonteCarloTreeSearch, Player):
 
-    def __init__(self, name="AI_MCTS", search_times=2000, is_output_analysis=True, greedy_value=1.4):
+    def __init__(self, name="AI_MCTS", search_times=2000, is_output_analysis=True, greedy_value=5.0):
         super().__init__()
         self.name = name
 
@@ -114,7 +114,7 @@ class AI_MCTS(MonteCarloTreeSearch, Player):
         :return: <TreeNode> 扩展出的节点。 Expanded nodes.
         """
         while True:
-            if node.children == {}:
+            if len(node.children) == 0:
                 break
             action, node = node.choose_best_child(c=self.greedy_value)
             board.step(action)

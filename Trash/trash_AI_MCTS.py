@@ -123,7 +123,7 @@ class AI_MCTS(MonteCarloTreeSearch, Player):
             if is_over:
                 break
             if len(node.children) != 0:
-                action, node = node.choose_best_child(c=5)
+                action, node = node.choose_best_child(c=5.0)
                 board.step(action)
             else:
                 actions = board.available_actions

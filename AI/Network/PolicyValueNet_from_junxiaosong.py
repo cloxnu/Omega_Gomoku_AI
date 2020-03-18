@@ -55,16 +55,15 @@ def data_augmentation_new(x_label, y_label):
         for i in [0, 1, 2, 3]:
             # rotate counterclockwise
             new_board_input = np.array([np.rot90(one_board_input, i) for one_board_input in board_input])
-            new_action_probs = np.rot90(np.flipud(
-                action_probs.reshape(BOARD.board_size, BOARD.board_size)), i)
+            new_action_probs = np.rot90(action_probs.reshape(BOARD.board_size, BOARD.board_size), i)
             extend_data.append((new_board_input,
-                                np.flipud(new_action_probs).flatten(),
+                                new_action_probs.flatten(),
                                 value))
             # flip horizontally
-            new_board_input = np.array([np.fliplr(one_board_input) for one_board_input in board_input])
+            new_board_input = np.array([np.fliplr(one_board_input) for one_board_input in new_board_input])
             new_action_probs = np.fliplr(new_action_probs)
             extend_data.append((new_board_input,
-                                np.flipud(new_action_probs).flatten(),
+                                new_action_probs.flatten(),
                                 value))
     return extend_data
 

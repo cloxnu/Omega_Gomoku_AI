@@ -10,7 +10,7 @@ def start_until_game_over(player1: Player, player2: Player, board_renderer: Boar
     Player player1 and player2 play on the board until the game is over, and output the winner.
     :param player1: 玩家 1。 Player 1.
     :param player2: 玩家 2。 Player 2.
-    :param board_renderer: 棋盘渲染器。 Checkerboard renderer.
+    :param board_renderer: 棋盘渲染器。 The board renderer.
     :return: <int> board 返回的获胜者。 The winner returned by board.
     """
     board = Board()

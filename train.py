@@ -41,10 +41,13 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                          is_training=True,
                          search_times=400,
                          is_output_analysis=False,
-                         greedy_value=5)
+                         greedy_value=5.0)
 
     try:
         i = 1
+        print("训练即将开始，按 <Ctrl-C> 结束训练。\n"
+              "The training is about to begin. Press <Ctrl-C> to end the training.\n"
+              "-----------------------------------------------")
         while True:
             # 自我对局。 Self play.
             print("自我对局中。。。 Self playing...")
@@ -111,14 +114,14 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                 # explained_var_new = (1 - np.var(np.array(values) - new_value.flatten()) / np.var(np.array(values)))
 
                 print("[ KL 散度 KL divergence: {:.5f}, 学习率因子 lr_multiplier: {:.3f}, "
-                      "损失 loss: {}, 熵 entropy: {} ]".format(kl, lr_multiplier, loss, entropy))
+                      "损失 loss: {:.3f}, 熵 entropy: {:.3f} ]".format(kl, lr_multiplier, loss, entropy))
 
             # 保存模型和评估网络。 Save models and evaluate networks.
             if i % check_point == 0:
                 print("神经网络评估中。。。 Neural network evaluating...")
-                pure_mcts = AI_MCTS(name="evaluate", is_output_analysis=False, greedy_value=5, search_times=1000)
+                pure_mcts = AI_MCTS(name="evaluate", is_output_analysis=False, greedy_value=5.0, search_times=1000)
                 training_mcts = AI_MCTS_Net(name="training", policy_value_function=network.predict,
-                                            search_times=400, is_output_analysis=False, greedy_value=5)
+                                            search_times=400, is_output_analysis=False, greedy_value=5.0)
                 win_times, lose_times, draw_times = 0, 0, 0
                 for j in range(10):
                     if j % 2 == 0:

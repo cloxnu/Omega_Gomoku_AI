@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b23fbfb-cfb2-4cae-969e-6983573a8956" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test2.h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/MonteCarloTreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI/MonteCarloTreeNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/BoardRenderer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/BoardRenderer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/ConsoleRenderer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/ConsoleRenderer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/AI_MCTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/AI_MCTS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/AI_MCTS_Net.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/AI_MCTS_Net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trash/trash_AI_MCTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Trash/trash_AI_MCTS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console_select.py" beforeDir="false" afterPath="$PROJECT_DIR$/console_select.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.conf" beforeDir="false" afterPath="$PROJECT_DIR$/game.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +57,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.start">
+  <component name="RunManager" selected="Python.train">
     <configuration name="Function" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Omega_Gomoku_AI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -154,8 +165,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.start" />
         <item itemvalue="Python.train" />
+        <item itemvalue="Python.start" />
         <item itemvalue="Python.configure" />
         <item itemvalue="Python.console_select" />
         <item itemvalue="Python.Function" />
@@ -203,46 +214,46 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state width="820" height="466" key="DebuggerActiveHint/0.23.1920.1011@0.23.1920.1011" timestamp="1584103387632" />
-    <state width="1072" height="328" key="GridCell.Tab.0.bottom" timestamp="1584377680782">
+    <state width="1072" height="231" key="GridCell.Tab.0.bottom" timestamp="1584514641444">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="328" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680782" />
-    <state width="1072" height="328" key="GridCell.Tab.0.center" timestamp="1584377680781">
+    <state width="1072" height="231" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584514641444" />
+    <state width="1072" height="231" key="GridCell.Tab.0.center" timestamp="1584514641443">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="328" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680781" />
-    <state width="1072" height="328" key="GridCell.Tab.0.left" timestamp="1584377680781">
+    <state width="1072" height="231" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584514641443" />
+    <state width="1072" height="231" key="GridCell.Tab.0.left" timestamp="1584514641443">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="328" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680781" />
-    <state width="1072" height="328" key="GridCell.Tab.0.right" timestamp="1584377680782">
+    <state width="1072" height="231" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584514641443" />
+    <state width="1072" height="231" key="GridCell.Tab.0.right" timestamp="1584514641444">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="328" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680782" />
-    <state width="1072" height="376" key="GridCell.Tab.1.bottom" timestamp="1584377680749">
+    <state width="1072" height="231" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584514641444" />
+    <state width="1072" height="231" key="GridCell.Tab.1.bottom" timestamp="1584514662424">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="376" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680749" />
-    <state width="1072" height="376" key="GridCell.Tab.1.center" timestamp="1584377680748">
+    <state width="1072" height="231" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584514662424" />
+    <state width="1072" height="231" key="GridCell.Tab.1.center" timestamp="1584514662424">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="376" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680748" />
-    <state width="1072" height="376" key="GridCell.Tab.1.left" timestamp="1584377680748">
+    <state width="1072" height="231" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584514662424" />
+    <state width="1072" height="231" key="GridCell.Tab.1.left" timestamp="1584514662423">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="376" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680748" />
-    <state width="1072" height="376" key="GridCell.Tab.1.right" timestamp="1584377680749">
+    <state width="1072" height="231" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584514662423" />
+    <state width="1072" height="231" key="GridCell.Tab.1.right" timestamp="1584514662424">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="376" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584377680749" />
+    <state width="1072" height="231" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584514662424" />
     <state x="707" y="155" key="SettingsEditor" timestamp="1583763704255">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="707" y="155" key="SettingsEditor/0.23.1920.1011@0.23.1920.1011" timestamp="1583763704255" />
-    <state width="589" height="430" key="XDebugger.FullValuePopup" timestamp="1584340368457">
+    <state width="589" height="430" key="XDebugger.FullValuePopup" timestamp="1584512337791">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="589" height="430" key="XDebugger.FullValuePopup/0.23.1920.1011@0.23.1920.1011" timestamp="1584340368457" />
+    <state width="589" height="430" key="XDebugger.FullValuePopup/0.23.1920.1011@0.23.1920.1011" timestamp="1584512337791" />
     <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1584489389389">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
@@ -251,10 +262,10 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="1699" y="195" width="1029" height="671" key="dock-window-1/0.23.1920.1011@0.23.1920.1011" timestamp="1583569380216" />
-    <state x="415" y="349" width="667" height="486" key="find.popup" timestamp="1584361585738">
+    <state x="415" y="349" width="667" height="486" key="find.popup" timestamp="1584514200093">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="415" y="349" width="667" height="486" key="find.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1584361585738" />
+    <state x="415" y="349" width="667" height="486" key="find.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1584514200093" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1583480365442">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
@@ -274,18 +285,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py</url>
-          <line>81</line>
+          <line>80</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py</url>
-          <line>101</line>
+          <line>100</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/train.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="97" />
+          <url>file://$PROJECT_DIR$/Player/AI_MCTS_Net.py</url>
+          <line>223</line>
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
