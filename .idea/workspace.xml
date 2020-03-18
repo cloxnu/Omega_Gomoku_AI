@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b23fbfb-cfb2-4cae-969e-6983573a8956" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Image/屏幕快照 2020-03-17 上午8.59.08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Image/屏幕快照 2020-03-17 上午8.59.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/8_5/3-17-12:34.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.conf" beforeDir="false" afterPath="$PROJECT_DIR$/game.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.sh" beforeDir="false" afterPath="$PROJECT_DIR$/game.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,10 +243,10 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state width="589" height="430" key="XDebugger.FullValuePopup/0.23.1920.1011@0.23.1920.1011" timestamp="1584340368457" />
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1584315999256">
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1584489389389">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1584315999256" />
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1584489389389" />
     <state x="1699" y="195" width="1029" height="671" key="dock-window-1" timestamp="1583569380216">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>

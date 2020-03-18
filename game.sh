@@ -1,3 +1,9 @@
+if [[ $1 = "-t" ]]
+then
+  python test.py
+  exit 0
+fi
+
 echo ""
 echo "欢迎使用 Omega_Gomoku_AI"
 echo "Welcome to use Omega_Gomoku_AI"
