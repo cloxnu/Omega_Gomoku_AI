@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b23fbfb-cfb2-4cae-969e-6983573a8956" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI/Network/PolicyValueNet_from_junxiaosong.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console_select.py" beforeDir="false" afterPath="$PROJECT_DIR$/console_select.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,18 +38,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4/test" />
       <recent name="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4" />
       <recent name="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/8_5" />
       <recent name="$PROJECT_DIR$/Model/junxiaosong" />
       <recent name="$PROJECT_DIR$/Player" />
-      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Model/PolicyValueNet_from_junxiaosong/6_4" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.start">
     <configuration name="Function" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Omega_Gomoku_AI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -154,10 +157,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.train" />
         <item itemvalue="Python.start" />
-        <item itemvalue="Python.configure" />
+        <item itemvalue="Python.train" />
         <item itemvalue="Python.console_select" />
+        <item itemvalue="Python.configure" />
         <item itemvalue="Python.Function" />
       </list>
     </recent_temporary>
@@ -203,38 +206,38 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state width="820" height="466" key="DebuggerActiveHint/0.23.1920.1011@0.23.1920.1011" timestamp="1584103387632" />
-    <state width="1072" height="334" key="GridCell.Tab.0.bottom" timestamp="1584606122613">
+    <state width="1072" height="299" key="GridCell.Tab.0.bottom" timestamp="1584630209477">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122613" />
-    <state width="1072" height="334" key="GridCell.Tab.0.center" timestamp="1584606122613">
+    <state width="1072" height="299" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584630209477" />
+    <state width="1072" height="299" key="GridCell.Tab.0.center" timestamp="1584630209476">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122613" />
-    <state width="1072" height="334" key="GridCell.Tab.0.left" timestamp="1584606122612">
+    <state width="1072" height="299" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584630209476" />
+    <state width="1072" height="299" key="GridCell.Tab.0.left" timestamp="1584630209476">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122612" />
-    <state width="1072" height="334" key="GridCell.Tab.0.right" timestamp="1584606122613">
+    <state width="1072" height="299" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584630209476" />
+    <state width="1072" height="299" key="GridCell.Tab.0.right" timestamp="1584630209477">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122613" />
-    <state width="1072" height="334" key="GridCell.Tab.1.bottom" timestamp="1584606122614">
+    <state width="1072" height="299" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584630209477" />
+    <state width="1072" height="265" key="GridCell.Tab.1.bottom" timestamp="1584628420369">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122614" />
-    <state width="1072" height="334" key="GridCell.Tab.1.center" timestamp="1584606122614">
+    <state width="1072" height="265" key="GridCell.Tab.1.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1584628420369" />
+    <state width="1072" height="265" key="GridCell.Tab.1.center" timestamp="1584628420369">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122614" />
-    <state width="1072" height="334" key="GridCell.Tab.1.left" timestamp="1584606122614">
+    <state width="1072" height="265" key="GridCell.Tab.1.center/0.23.1920.1011@0.23.1920.1011" timestamp="1584628420369" />
+    <state width="1072" height="265" key="GridCell.Tab.1.left" timestamp="1584628420369">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122614" />
-    <state width="1072" height="334" key="GridCell.Tab.1.right" timestamp="1584606122614">
+    <state width="1072" height="265" key="GridCell.Tab.1.left/0.23.1920.1011@0.23.1920.1011" timestamp="1584628420369" />
+    <state width="1072" height="265" key="GridCell.Tab.1.right" timestamp="1584628420369">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state width="1072" height="334" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584606122614" />
+    <state width="1072" height="265" key="GridCell.Tab.1.right/0.23.1920.1011@0.23.1920.1011" timestamp="1584628420369" />
     <state x="707" y="155" key="SettingsEditor" timestamp="1583763704255">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
@@ -243,18 +246,18 @@
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state width="589" height="430" key="XDebugger.FullValuePopup/0.23.1920.1011@0.23.1920.1011" timestamp="1584585087892" />
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1584489389389">
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1584619558920">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1584489389389" />
+    <state x="705" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.1011@0.23.1920.1011" timestamp="1584619558920" />
     <state x="1699" y="195" width="1029" height="671" key="dock-window-1" timestamp="1583569380216">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
     <state x="1699" y="195" width="1029" height="671" key="dock-window-1/0.23.1920.1011@0.23.1920.1011" timestamp="1583569380216" />
-    <state x="415" y="349" width="667" height="486" key="find.popup" timestamp="1584594728366">
+    <state x="415" y="349" width="667" height="486" key="find.popup" timestamp="1584630613765">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>
-    <state x="415" y="349" width="667" height="486" key="find.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1584594728366" />
+    <state x="415" y="349" width="667" height="486" key="find.popup/0.23.1920.1011@0.23.1920.1011" timestamp="1584630613765" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1583480365442">
       <screen x="0" y="23" width="1920" height="1011" />
     </state>

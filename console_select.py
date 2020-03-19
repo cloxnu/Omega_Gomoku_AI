@@ -100,9 +100,9 @@ def select_network(is_training=False):
     :param is_training: 是否训练。 Whether to train.
     :return: <Network> 网络。 network.
     """
-    network_selected = select("请选择想要使用的神经网络。\n"
+    network_selected = select("请选择想要使用的神经网络。按 <Ctrl-C> 退出。\n"
                               "1: 由 [junxiaosong] 提供的神经网络\n"
-                              "Please select the neural network you want to use.\n"
+                              "Please select the neural network you want to use. Press <Ctrl-C> to exit.\n"
                               "1: Neural network provided by [junxiaosong]\n"
                               ": ", allowed_input=[1])
     if network_selected == 1:
@@ -115,8 +115,8 @@ def select_model(dir: str, is_training=False):
     Select the network model you want to use or train.
     :param dir: 网络模型目录。 Network model directory.
     :param is_training: 是否训练。 Whether to train.
-    :return: (<bool>, <str>) 是否是新的网络模型，和网络模型路径。
-    Whether it is a new network model, and the network model path.
+    :return: (<bool>, <str>, <str>) 是否是新的网络模型，和网络模型路径，网络模型记录路径。
+    Whether it is a new network model, and the network model path, and the network model record path.
     """
     conf = Configure()
     conf.get_conf()
@@ -124,21 +124,24 @@ def select_model(dir: str, is_training=False):
     model_path = pathlib.Path(dir)
     model_path = model_path / board_conf_str
     model_path.mkdir(parents=True, exist_ok=True)
-    all_model_path = list(model_path.glob("*.h5"))
-    all_model_name = [path.name[:-3] for path in all_model_path]
+    all_model_path = sorted(item for item in model_path.glob('*/') if item.is_dir())
+    all_model_name = [path.name for path in all_model_path]
 
-    print("请选择想要使用的网络模型。\n"
-          "Please select the network model you want to use.")
     if is_training:
+        print("请选择想要训练的网络模型。按 <Ctrl-C> 退出。\n"
+              "Please select the network model you want to train. Press <Ctrl-C> to exit.")
         print("0: 创建新的网络模型。 Create a new network model.")
+    else:
+        print("请选择想要使用的网络模型。按 <Ctrl-C> 退出。\n"
+              "Please select the network model you want to use. Press <Ctrl-C> to exit.")
     for i, one_model_name in enumerate(all_model_name):
         print("{0}: {1}".format(i + 1, one_model_name))
 
     model_selected = select(": ", allowed_input=range(0 if is_training else 1, len(all_model_path) + 1))
     if model_selected == 0:
         while True:
-            new_name = input("请输入新的模型名称。\n"
-                             "Please enter a new model name.\n"
+            new_name = input("请输入新的模型名称。按 <Ctrl-C> 退出。\n"
+                             "Please enter a new model name. Press <Ctrl-C> to exit.\n"
                              ": ")
             if len(new_name) == 0:
                 print("模型名称为空，请重新输入。\n"
@@ -148,6 +151,20 @@ def select_model(dir: str, is_training=False):
                 print("该模型名称已存在，请重新输入。\n"
                       "The model name already exists, please try again.\n")
                 continue
-            return True, model_path / (new_name + ".h5")
-
-    return False, all_model_path[model_selected - 1]
+            model_path = model_path / new_name
+            model_path.mkdir(parents=True, exist_ok=True)
+            return True, str(model_path) + "/", None
+    else:
+        model_path = all_model_path[model_selected - 1]
+        model_record_path = sorted(item for item in model_path.glob('*.h5'))
+        model_record_name = [path.name[:-3] for path in model_record_path]
+        if is_training:
+            print("请选择想要训练的模型记录。按 <Ctrl-C> 退出。\n"
+                  "Please select the model record you want to train. Press <Ctrl-C> to exit.")
+        else:
+            print("请选择想要使用的模型记录。按 <Ctrl-C> 退出。\n"
+                  "Please select the model record you want to use. Press <Ctrl-C> to exit.")
+        for i, one_model_record_name in enumerate(model_record_name):
+            print("{0}: {1}".format(i + 1, one_model_record_name))
+        model_record_selected = select(": ", allowed_input=range(1, len(model_record_path) + 1))
+        return False, str(model_path) + "/", str(model_record_path[model_record_selected - 1])

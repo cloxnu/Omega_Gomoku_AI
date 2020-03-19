@@ -111,13 +111,13 @@ class PolicyValueNet_from_junxiaosong(Network):
     def __init__(self, is_training=False):
         self.l2_const = 1e-4
 
-        is_new_model, self.model_file = \
+        is_new_model, self.model_dir, self.model_record_path = \
             console_select.select_model("Model/PolicyValueNet_from_junxiaosong", is_training)
 
         if is_new_model:
             self.create_net()
         else:
-            self.model = keras.models.load_model(self.model_file)
+            self.model = keras.models.load_model(self.model_record_path)
 
     def __str__(self):
         return "PolicyValueNet_from_junxiaosong"

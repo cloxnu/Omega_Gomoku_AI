@@ -32,6 +32,13 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
     kl = 0  # KL 散度。 KL divergence.
     kl_targ = 0.02
 
+    # 神经网络评估对战纯蒙特卡洛树 AI 的搜索次数。
+    # The search times of the pure Monte Carlo tree AI.
+    pure_mcts_search_times = 1000
+
+    # 网络评估胜率。 Network evaluation win rate.
+    win_ratio = 0
+
     # 每对局 check_point 次，保存模型并评估网络。 Check_point times per game, save model and evaluate network.
     check_point = 50
 
@@ -145,15 +152,27 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                             draw_times += 1
                     print("对局 {0} 次，获胜 {1} 次，失败 {2} 次，平 {3} 次。 {0} games, {1} wins, {2} loses, {3} draws".
                           format(j + 1, win_times, lose_times, draw_times))
-                print("保存模型中。。。 Model saving...")
-                network.model.save(network.model_file)
-                print("模型已保存至 The model saved to: \'{}\'".format(network.model_file))
+
+                # 计算胜率。 Calculate the win rate.
+                current_win_ratio = win_times / 10.0
+                if current_win_ratio > win_ratio:
+                    win_ratio = current_win_ratio
+                    print("胜率新纪录！New record of win rate!")
+                    print("保存最佳模型记录中。。。 Best model record saving...")
+                    # 最佳模型记录格式 Best model record format: "best_1000_6.h5"
+                    best_model_path = network.model_dir + "best_" + "{}_{}.h5".format(pure_mcts_search_times, win_times)
+                    network.model.save(best_model_path)
+                    print("最佳模型记录已保存至 The best model record saved to: \'{}\'".format(best_model_path))
+
+                print("保存最新模型记录中。。。 Latest model record saving...")
+                network.model.save(network.model_dir + "latest.h5")
+                print("最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
             i += 1
     except KeyboardInterrupt:
         print("退出训练。 Exit training.")
-        print("保存模型中。。。 Model saving...")
-        network.model.save(network.model_file)
-        print("模型已保存至 The model saved to: \'{}\'".format(network.model_file))
+        print("保存最新模型记录中。。。 Latest model record saving...")
+        network.model.save(network.model_dir + "latest.h5")
+        print("最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
 
 
 if __name__ == '__main__':
