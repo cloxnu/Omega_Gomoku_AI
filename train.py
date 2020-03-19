@@ -1,8 +1,10 @@
 import numpy as np
 import random
 import collections
+import sys
+import datetime
 
-from console_select import select_network
+from console_select import select_network, select_yes_or_no
 
 import Game.Board as BOARD
 from Game.Game import start_until_game_over
@@ -50,8 +52,26 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                          is_output_analysis=False,
                          greedy_value=5.0)
 
+    is_output_log = select_yes_or_no("请选择是否输出此次训练日志文件。[Y/y] 输出，[N/n] 不输出。\n"
+                                     "Please choose whether to output the training log file. "
+                                     "[Y/y] output，[N/n] not output.\n"
+                                     "(y): ", default=True)
+
+    log_file = open(network.model_dir + "out.log", mode="a", encoding="utf-8")
+    if is_output_log:
+        log_file.write("\n\n-------------------------------------------")
+        print("训练日志文件将会保存至 The training log file will be saved to: {}".format(network.model_dir + "out.log"))
+
     try:
         i = 1
+        print("\n训练开始时间 Training start time: {0},\n"
+              "训练模型路径 Training model path: {1}\n".
+              format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), network.model_dir))
+        if is_output_log:
+            log_file.write("\n训练开始时间 Training start time: {0},\n"
+                           "训练模型路径 Training model path: {1}\n\n".
+                           format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), network.model_dir))
+
         print("训练即将开始，按 <Ctrl-C> 结束训练。\n"
               "The training is about to begin. Press <Ctrl-C> to end the training.\n"
               "-----------------------------------------------")
@@ -61,6 +81,8 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
             board_inputs, all_action_probs, values = player.self_play(temp=temp)
 
             print("进行的局数 Round: {}, 步数 Step: {}, ".format(i, len(values)), end="")
+            if is_output_log:
+                log_file.write("进行的局数 Round: {}, 步数 Step: {}, ".format(i, len(values)))
 
             # 数据扩充。 Data augmentation.
             play_data = \
@@ -74,11 +96,15 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
             all_play_data_count += len(play_data)
 
             print("棋盘总收集数据 Total board data collection: {}".format(all_play_data_count))
+            if is_output_log:
+                log_file.write("棋盘总收集数据 Total board data collection: {}\n".format(all_play_data_count))
 
             # 收集数据数量达到 batch_size。 The amount of collected data reaches batch_size.
             if len(all_play_data) > batch_size:
 
                 print("神经网络训练中。。。 Neural network training...")
+                if is_output_log:
+                    log_file.write("神经网络训练中。。。 Neural network training...\n")
 
                 # 随机选出训练样本。 Randomly select training samples.
                 will_train_play_data = random.sample(all_play_data, batch_size)
@@ -125,10 +151,16 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
 
                 print("[ KL 散度 KL divergence: {:.5f}, 学习率因子 lr_multiplier: {:.3f}, "
                       "损失 loss: {:.3f}, 熵 entropy: {:.3f} ]".format(kl, lr_multiplier, loss, entropy))
+                if is_output_log:
+                    log_file.write("[ KL 散度 KL divergence: {:.5f}, 学习率因子 lr_multiplier: {:.3f}, "
+                                   "损失 loss: {:.3f}, 熵 entropy: {:.3f} ]\n".format(kl, lr_multiplier, loss, entropy))
 
             # 保存模型和评估网络。 Save models and evaluate networks.
             if i % check_point == 0:
                 print("神经网络评估中。。。 Neural network evaluating...")
+                if is_output_log:
+                    log_file.write("神经网络评估中。。。 Neural network evaluating...\n")
+
                 pure_mcts = AI_MCTS(name="evaluate", is_output_analysis=False, greedy_value=5.0, search_times=1000)
                 training_mcts = AI_MCTS_Net(name="training", policy_value_function=network.predict,
                                             search_times=400, is_output_analysis=False, greedy_value=5.0)
@@ -152,6 +184,10 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                             draw_times += 1
                     print("对局 {0} 次，获胜 {1} 次，失败 {2} 次，平 {3} 次。 {0} games, {1} wins, {2} loses, {3} draws".
                           format(j + 1, win_times, lose_times, draw_times))
+                    if is_output_log:
+                        log_file.write("对局 {0} 次，获胜 {1} 次，失败 {2} 次，平 {3} 次。 "
+                                       "{0} games, {1} wins, {2} loses, {3} draws\n".
+                                       format(j + 1, win_times, lose_times, draw_times))
 
                 # 计算胜率。 Calculate the win rate.
                 current_win_ratio = win_times / 10.0
@@ -159,20 +195,30 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                     win_ratio = current_win_ratio
                     print("胜率新纪录！New record of win rate!")
                     print("保存最佳模型记录中。。。 Best model record saving...")
+                    if is_output_log:
+                        log_file.write("胜率新纪录！New record of win rate!\n")
                     # 最佳模型记录格式 Best model record format: "best_1000_6.h5"
                     best_model_path = network.model_dir + "best_" + "{}_{}.h5".format(pure_mcts_search_times, win_times)
                     network.model.save(best_model_path)
                     print("最佳模型记录已保存至 The best model record saved to: \'{}\'".format(best_model_path))
+                    if is_output_log:
+                        log_file.write("最佳模型记录已保存至 The best model record saved to: \'{}\'\n".format(best_model_path))
 
                 print("保存最新模型记录中。。。 Latest model record saving...")
                 network.model.save(network.model_dir + "latest.h5")
                 print("最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
+                if is_output_log:
+                    log_file.write("最新模型记录已保存至 The latest model record saved to: \'{}\'\n".format(network.model_dir + "latest.h5"))
             i += 1
     except KeyboardInterrupt:
         print("退出训练。 Exit training.")
         print("保存最新模型记录中。。。 Latest model record saving...")
         network.model.save(network.model_dir + "latest.h5")
         print("最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
+        if is_output_log:
+            log_file.write("退出训练。 Exit training.\n"
+                           "最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
+        log_file.close()
 
 
 if __name__ == '__main__':

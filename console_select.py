@@ -32,6 +32,29 @@ def select(prompt, allowed_input):
     return choose_value
 
 
+def select_yes_or_no(prompt, default: bool):
+    """
+    要求用户选择 Yes or No.
+    Ask the user to select Yes or No.
+    :param prompt: 提示语。 prompt.
+    :param default: 默认值。 The default value.
+    :return: <bool> Yes is True, No is False.
+    """
+    while True:
+        input_str = input(prompt)
+        if len(input_str) == 0:
+            value = default
+        elif input_str == "n" or input_str == "N":
+            value = False
+        elif input_str == "y" or input_str == "Y":
+            value = True
+        else:
+            print("输入有误，请重新输入。\n"
+                  "The input is incorrect. Please try again.\n")
+            continue
+        return value
+
+
 def select_player(prompt, allowed_input):
     """
     选择玩家。
