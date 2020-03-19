@@ -58,8 +58,11 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
             # 数据扩充。 Data augmentation.
             play_data = \
                 data_augmentation_new(x_label=board_inputs, y_label=(all_action_probs, values))
+            # new_action_probs = []
+            # for one_action_probs in all_action_probs:
+            #     new_action_probs.append(one_action_probs.flatten())
 
-            # play_data = list(zip(board_inputs, all_action_probs, values))
+            # play_data = list(zip(board_inputs, new_action_probs, values))
             all_play_data.extend(play_data)
             all_play_data_count += len(play_data)
 

@@ -92,9 +92,9 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         """
         board_inputs, all_action_probs, current_player = [], [], []
         board = Board()
+        self.reset()
 
         while True:
-            self.reset()
             self.run(board, self.search_times)
 
             # 取得落子动作和概率。 Get actions and probabilities.
@@ -123,6 +123,13 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
             action = (flatten_action // BOARD.board_size, flatten_action % BOARD.board_size)
 
             board.step(action)
+
+            # 重置根节点。 Reset the root node.
+            if action in self.root.children:
+                self.root = self.root.children[action]
+                self.root.parent = None
+            else:
+                self.reset()
 
             is_over, winner = board.result()
             if is_over:
@@ -222,11 +229,11 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         is_over, winner = board.result()
         if is_over:
             if winner == board.current_player:
-                value = 1
+                value = 1.0
             elif winner == -board.current_player:
-                value = -1
+                value = -1.0
             else:
-                value = 0
+                value = 0.0
             return node, value
 
         # 使用策略价值函数决策当前动作概率及评估价值。

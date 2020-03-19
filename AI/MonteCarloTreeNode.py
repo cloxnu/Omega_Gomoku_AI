@@ -1,8 +1,5 @@
 import numpy as np
 
-from Game.Board import Board
-import copy
-
 
 class TreeNode(object):
 
@@ -12,15 +9,6 @@ class TreeNode(object):
         self.reward = 0  # 该节点的奖励。 Total simulation reward of the node.
         self.visited_times = 0  # 该节点访问的次数。 Total number of visits of the node.
         self.prior_prob = prior_prob  # 父节点选到此节点的概率。 prior probability of the move.
-        self.uct = 0
-
-    # def is_full_expand(self):
-    #     """
-    #     节点是否完全扩展。
-    #     Is node fully expanded?
-    #     :return: <Bool> 是否完全扩展。 whether Full expand or not.
-    #     """
-    #     return len(self.will_expand_actions) == 0
 
     def is_root(self):
         """
@@ -38,9 +26,6 @@ class TreeNode(object):
         :param probability: 父节点选到此动作的概率。 prior probability of the move.
         :return: <TreeNode> 扩展出的节点
         """
-        # 扩展一个执行动作。 Expand an action.
-        # action = self.will_expand_action.pop()
-
         # 如果已经扩展过了（一般不可能）。 If it has been extended (generally impossible).
         if action in self.children:
             return self.children[action]
