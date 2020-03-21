@@ -45,7 +45,10 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
 - [console_select.py](console_select.py) - Some console input functions.
 - [Game/](Game/)
   - [Game.py](Game/Game.py) - An abstract class named Game, implemented by Console board and Visual board.
-  - [ConsoleBoard.py](Game/ConsoleBoard.py) - implements class Game.
+  - [Board.py](Game/Board.py) - Game board, including board rendering, execution and result determination.
+  - [BoardRenderer.py](Game/BoardRenderer.py) - An abstract class named BoardRenderer, implemented by ConsoleRenderer and VisualRenderer.
+  - [ConsoleRenderer.py](Game/ConsoleRenderer.py) - implements class BoardRenderer.
+  - ~~VisualRenderer.py - implements class BoardRenderer.~~
 - [Player/](Player/)
   - [Player.py](Player/Player.py) - An abstract class named Player, implemented by Human and AIs.
   - [Human.py](Player/Human.py) - Human player, implements class Game.

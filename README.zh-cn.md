@@ -41,7 +41,10 @@
 - [console_select.py](console_select.py) - 一些控制台输入函数.
 - [Game/](Game/)
   - [Game.py](Game/Game.py) - 抽象类 Game, 被控制台棋盘 (Console board) 和可视化棋盘 (Visual board) 实现。
-  - [ConsoleBoard.py](Game/ConsoleBoard.py) - 控制台棋盘，实现类 Game.
+  - [Board.py](Game/Board.py) - 游戏棋盘，包括棋盘渲染，执行和结果判定。
+  - [BoardRenderer.py](Game/BoardRenderer.py) - 抽象类 BoardRenderer，被控制台渲染器 (ConsoleRenderer) 和可视化渲染器 (VisualRenderer) 实现。
+  - [ConsoleRenderer.py](Game/ConsoleRenderer.py) - 控制台渲染器，实现类 BoardRenderer。
+  - ~~VisualRenderer.py - 可视化渲染器，实现类 BoardRenderer。~~
 - [Player/](Player/)
   - [Player.py](Player/Player.py) - 抽象类 Player, 被人类玩家 (Human) 和 AI 玩家实现。
   - [Human.py](Player/Human.py) - 人类玩家，实现类 Player.
