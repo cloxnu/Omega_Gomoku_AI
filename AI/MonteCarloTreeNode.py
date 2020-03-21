@@ -37,12 +37,12 @@ class TreeNode(object):
         return child_node
 
     def UCT_function(self, c=5.0):
-        greedy = c * self.prior_prob * np.sqrt(self.parent.visited_times/(1 + self.visited_times))
-        # self.uct = (c * self.prior_prob * np.sqrt(self.parent.visited_times) / (1 + self.visited_times))
-        # return self.reward + self.uct
-        if self.visited_times == 0:
-            return greedy
-        return self.reward / self.visited_times + greedy
+        # greedy = c * self.prior_prob * np.sqrt(self.parent.visited_times/(1 + self.visited_times))
+        uct = (c * self.prior_prob * np.sqrt(self.parent.visited_times) / (1 + self.visited_times))
+        return self.reward + uct
+        # if self.visited_times == 0:
+        #     return greedy
+        # return self.reward / self.visited_times + greedy
 
     def choose_best_child(self, c=5.0):
         """
@@ -59,8 +59,11 @@ class TreeNode(object):
         Backpropagate, passing the result to the parent node.
         :param value: 反向传输的值。 The value to be backpropagated.
         """
-        self.visited_times += 1
-        self.reward += value
+        # self.visited_times += 1
+        # self.reward += value
 
         if not self.is_root():
             self.parent.backpropagate(-value)
+
+        self.visited_times += 1
+        self.reward += 1.0*(value - self.reward) / self.visited_times

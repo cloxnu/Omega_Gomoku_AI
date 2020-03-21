@@ -108,7 +108,7 @@ $ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:latest
 确保你的电脑安装了 Keras 的后端环境（Tensorflow），在获取这个仓库之后，运行：
 
 ```shell
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 ```
 
 必要时，命令 'pip' 可改为 'pip3'。

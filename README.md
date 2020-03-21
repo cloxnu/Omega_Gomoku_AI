@@ -117,7 +117,7 @@ Running...
 Make sure you have a Keras backend (Tensorflow) environment installed on your computer, and after cloning this repo, then run the following command:
 
 ```shell
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 ```
 
 If necessary, the command 'pip' should be changed to 'pip3'.

@@ -1,8 +1,8 @@
 import numpy as np
 import random
 import collections
-import sys
 import datetime
+import os
 
 from console_select import select_network, select_yes_or_no
 
@@ -87,9 +87,6 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
             # 数据扩充。 Data augmentation.
             play_data = \
                 data_augmentation_new(x_label=board_inputs, y_label=(all_action_probs, values))
-            # new_action_probs = []
-            # for one_action_probs in all_action_probs:
-            #     new_action_probs.append(one_action_probs.flatten())
 
             # play_data = list(zip(board_inputs, new_action_probs, values))
             all_play_data.extend(play_data)
@@ -146,9 +143,6 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                 elif kl < kl_targ / 2 and lr_multiplier < 10:
                     lr_multiplier *= 1.5
 
-                # explained_var_old = (1 - np.var(np.array(values) - old_value.flatten()) / np.var(np.array(values)))
-                # explained_var_new = (1 - np.var(np.array(values) - new_value.flatten()) / np.var(np.array(values)))
-
                 print("[ KL 散度 KL divergence: {:.5f}, 学习率因子 lr_multiplier: {:.3f}, "
                       "损失 loss: {:.3f}, 熵 entropy: {:.3f} ]".format(kl, lr_multiplier, loss, entropy))
                 if is_output_log:
@@ -161,7 +155,7 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                 if is_output_log:
                     log_file.write("神经网络评估中。。。 Neural network evaluating...\n")
 
-                pure_mcts = AI_MCTS(name="evaluate", is_output_analysis=False, greedy_value=5.0, search_times=1000)
+                pure_mcts = AI_MCTS(name="evaluate", is_output_analysis=False, greedy_value=5.0, search_times=pure_mcts_search_times)
                 training_mcts = AI_MCTS_Net(name="training", policy_value_function=network.predict,
                                             search_times=400, is_output_analysis=False, greedy_value=5.0)
                 win_times, lose_times, draw_times = 0, 0, 0
@@ -197,12 +191,26 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong):
                     print("保存最佳模型记录中。。。 Best model record saving...")
                     if is_output_log:
                         log_file.write("胜率新纪录！New record of win rate!\n")
+
+                    # 保存最佳模型。 Save old model.
                     # 最佳模型记录格式 Best model record format: "best_1000_6.h5"
                     best_model_path = network.model_dir + "best_" + "{}_{}.h5".format(pure_mcts_search_times, win_times)
                     network.model.save(best_model_path)
                     print("最佳模型记录已保存至 The best model record saved to: \'{}\'".format(best_model_path))
+
+                    # 删除以前的最佳模型。 Remove old model.
+                    for old_win_times in range(win_times):
+                        old_model = network.model_dir + "best_{}_{}.h5".format(pure_mcts_search_times, old_win_times)
+                        if os.path.exists(old_model):
+                            os.remove(old_model)
+
                     if is_output_log:
                         log_file.write("最佳模型记录已保存至 The best model record saved to: \'{}\'\n".format(best_model_path))
+
+                if current_win_ratio == 1.0 and pure_mcts_search_times < 5000:
+                    pure_mcts_search_times += 1000
+                    win_ratio = 0
+                    print("恭喜全部获胜，评估难度增加，纯 MCTS AI 选手搜索次数上升为 {}".format(pure_mcts_search_times))
 
                 print("保存最新模型记录中。。。 Latest model record saving...")
                 network.model.save(network.model_dir + "latest.h5")
