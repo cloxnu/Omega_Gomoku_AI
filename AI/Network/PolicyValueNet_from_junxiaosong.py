@@ -12,8 +12,6 @@ import keras.backend as K
 import Game.Board as BOARD
 from Function import get_data_augmentation
 
-import pickle
-
 
 def board_to_xlabel(board):
     """
@@ -24,7 +22,7 @@ def board_to_xlabel(board):
     """
 
     # board -> board_input (x_label)
-    x_label = np.zeros((4, BOARD.board_size, BOARD.board_size), dtype=np.float64)
+    x_label = np.zeros((4, BOARD.board_size, BOARD.board_size))
 
     # 1: 我方棋子位置。 Position of our pieces.
     x_label[0][board.board == board.current_player] = 1
@@ -127,10 +125,6 @@ class PolicyValueNet_from_junxiaosong(Network):
         else:
             self.model = keras.models.load_model(self.model_record_path)
 
-        # self.create_net()
-        # net_params = pickle.load(open("best_policy.model", 'rb'))
-        # self.model.set_weights(net_params)
-
     def __str__(self):
         return "PolicyValueNet_from_junxiaosong"
 
@@ -175,12 +169,12 @@ class PolicyValueNet_from_junxiaosong(Network):
 
         board_input = np.array(x_label)
 
-        probs, value = y_label
+        probs, values = y_label
         probs_output = np.array(probs)
-        value_output = np.array(value)
+        values_output = np.array(values)
 
         K.set_value(self.model.optimizer.lr, learning_rate)
-        self.model.fit(board_input, [probs_output, value_output],
+        self.model.fit(board_input, [probs_output, values_output],
                        batch_size=len(x_label), verbose=0)
 
     def predict(self, board):
@@ -214,11 +208,11 @@ class PolicyValueNet_from_junxiaosong(Network):
 
         board_input = np.array(x_label)
 
-        probs, value = y_label
+        probs, values = y_label
         probs_output = np.array(probs)
-        value_output = np.array(value)
+        values_output = np.array(values)
 
-        return self.model.evaluate(board_input, [probs_output, value_output], batch_size=len(board_input), verbose=0)
+        return self.model.evaluate(board_input, [probs_output, values_output], batch_size=len(board_input), verbose=0)
 
     def get_entropy(self, x_label):
         """

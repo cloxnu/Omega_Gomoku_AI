@@ -24,7 +24,7 @@ board_size = conf.conf_dict["board_size"]   # 棋盘大小。 The size of the bo
 class Board:
 
     def __init__(self):
-        self.board = np.zeros((board_size, board_size), dtype=np.float64)
+        self.board = np.zeros((board_size, board_size))
         self.available_actions = coordinates_set(board_size, board_size)
         self.last_action = None  # 上次的落子。 Last move.
         self.current_player = start_player  # current player
@@ -42,7 +42,7 @@ class Board:
         重置棋盘。
         Reset board.
         """
-        self.board = np.zeros((board_size, board_size), dtype=np.float64)
+        self.board = np.zeros((board_size, board_size))
         self.available_actions = coordinates_set(board_size, board_size)
         self.last_action = None
         self.current_player = start_player  # current player

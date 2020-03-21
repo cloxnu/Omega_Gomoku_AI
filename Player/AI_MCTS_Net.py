@@ -71,7 +71,7 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         board.step(action)
 
         if self.is_output_analysis:
-            action_probs = np.zeros((BOARD.board_size, BOARD.board_size), dtype=np.float64)
+            action_probs = np.zeros((BOARD.board_size, BOARD.board_size))
             # probs -> action_probs
             for one_action, one_prob in zip(actions, probs):
                 action_probs[one_action[0], one_action[1]] = one_prob
@@ -99,7 +99,7 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
 
             # 取得落子动作和概率。 Get actions and probabilities.
             actions, probs = self.get_action_probs(temp=temp)
-            action_probs = np.zeros((BOARD.board_size, BOARD.board_size), dtype=np.float64)
+            action_probs = np.zeros((BOARD.board_size, BOARD.board_size))
 
             # actions, probs -> action_probs
             for action, prob in zip(actions, probs):
@@ -133,7 +133,7 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
 
             is_over, winner = board.result()
             if is_over:
-                values = np.zeros(len(current_player), dtype=np.float64)
+                values = np.zeros(len(current_player))
                 if winner != 0:
                     values[np.array(current_player) == winner] = 1
                     values[np.array(current_player) != winner] = -1
