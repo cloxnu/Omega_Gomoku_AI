@@ -22,8 +22,8 @@ def start():
             search_times, greedy_value = set_AI_conf(search_times=2000, greedy_value=5.0)
             return AI_MCTS(name=name,
                            search_times=search_times,
-                           is_output_analysis=conf.conf_dict["AI_is_output_analysis"],
-                           greedy_value=greedy_value)
+                           greedy_value=greedy_value,
+                           is_output_analysis=conf.conf_dict["AI_is_output_analysis"])
         elif player_selected == 3:
             network = select_network()
             search_times, greedy_value = set_AI_conf(search_times=400, greedy_value=5.0)
@@ -31,8 +31,8 @@ def start():
                                policy_value_function=network.predict,
                                is_training=False,
                                search_times=search_times,
-                               is_output_analysis=conf.conf_dict["AI_is_output_analysis"],
-                               greedy_value=greedy_value)
+                               greedy_value=greedy_value,
+                               is_output_analysis=conf.conf_dict["AI_is_output_analysis"])
 
     player1_selected, name1 = select_player("请输入先落子玩家。\n"
                                             "1: 人类\n"

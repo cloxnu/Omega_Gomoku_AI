@@ -11,13 +11,15 @@ from Player.Player import Player
 
 class AI_MCTS(MonteCarloTreeSearch, Player):
 
-    def __init__(self, name="AI_MCTS", search_times=2000, is_output_analysis=True, greedy_value=5.0):
+    def __init__(self, name="AI_MCTS", search_times=2000, greedy_value=5.0,
+                 is_output_analysis=True, is_output_running=True):
         super().__init__()
         self.name = name
 
         self.search_times = search_times  # 树搜索次数。 The search times of tree.
-        self.is_output_analysis = is_output_analysis  # 是否输出 AI 分析。 Whether to output AI analysis.
         self.greedy_value = greedy_value  # 贪婪值。 The greedy value.
+        self.is_output_analysis = is_output_analysis  # 是否输出 AI 分析。 Whether to output AI analysis.
+        self.is_output_running = is_output_running  # 是否输出 'running'。 Whether to output 'running'.
 
     def reset(self):
         self.root = TreeNode(prior_prob=1.0)
@@ -87,7 +89,7 @@ class AI_MCTS(MonteCarloTreeSearch, Player):
         """
         for i in range(times):
             board = copy.deepcopy(start_board)
-            if i % 20 == 0:
+            if i % 20 == 0 and self.is_output_running:
                 print("\rrunning: {} / {}".format(i, times), end="")
 
             # 扩展节点。

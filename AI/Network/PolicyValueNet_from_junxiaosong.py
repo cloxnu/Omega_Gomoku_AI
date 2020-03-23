@@ -1,3 +1,4 @@
+from configure import Configure
 from AI.Network.Network import Network
 import console_select
 
@@ -114,11 +115,11 @@ class PolicyValueNet_from_junxiaosong(Network):
     Network by @junxiaosong.
     """
 
-    def __init__(self, is_training=False):
+    def __init__(self, is_training=False, specified_model_name=""):
         self.l2_const = 1e-4
 
         is_new_model, self.model_dir, self.model_record_path = \
-            console_select.select_model("Model/PolicyValueNet_from_junxiaosong", is_training)
+            console_select.select_model("Model/PolicyValueNet_from_junxiaosong", is_training, specified_model_name)
 
         if is_new_model:
             self.create_net()

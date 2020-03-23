@@ -8,7 +8,6 @@ class Network(metaclass=ABCMeta):
         """
         创建网络。
         Create the network.
-        :return:
         """
 
     @abstractmethod
@@ -19,5 +18,4 @@ class Network(metaclass=ABCMeta):
         :param x_label: 输入神经网络的标签。 Input neural network labels.
         :param y_label: 正确的输出标签。 Correct output label.
         :param learning_rate: 学习率。 Learning rate.
-        :return:
         """

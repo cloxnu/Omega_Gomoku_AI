@@ -1,6 +1,9 @@
 
+.DS_Store
 *.h5
 *.log
 *.model
-/__pycache__/
-/.idea/
+__pycache__
+.idea
+/.floyd*
+/floyd.yml

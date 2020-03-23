@@ -116,28 +116,33 @@ def set_AI_conf(search_times=2000, greedy_value=5.0):
     return search_times, greedy_value
 
 
-def select_network(is_training=False):
+def select_network(is_training=False, specified_network=0, specified_model_name=""):
     """
     选择想要使用的神经网络。
     Select the network you want to use.
     :param is_training: 是否训练。 Whether to train.
+    :param specified_network: 指定的网络。 Specified network.
+    :param specified_model_name: 指定的网络模型。 Specified model.
     :return: <Network> 网络。 network.
     """
+    allowed_input = [1]
     network_selected = select("请选择想要使用的神经网络。按 <Ctrl-C> 退出。\n"
                               "1: 由 [junxiaosong] 提供的神经网络\n"
                               "Please select the neural network you want to use. Press <Ctrl-C> to exit.\n"
                               "1: Neural network provided by [junxiaosong]\n"
-                              ": ", allowed_input=[1])
+                              ": ", allowed_input=allowed_input) \
+        if specified_network not in allowed_input else specified_network
     if network_selected == 1:
-        return PolicyValueNet_from_junxiaosong.PolicyValueNet_from_junxiaosong(is_training)
+        return PolicyValueNet_from_junxiaosong.PolicyValueNet_from_junxiaosong(is_training, specified_model_name)
 
 
-def select_model(dir: str, is_training=False):
+def select_model(dir: str, is_training=False, specified_model_name=""):
     """
     选择想要使用或训练的网络模型。
     Select the network model you want to use or train.
     :param dir: 网络模型目录。 Network model directory.
     :param is_training: 是否训练。 Whether to train.
+    :param specified_model_name: 指定想要选择的模型。 Specify the model you want to select.
     :return: (<bool>, <str>, <str>) 是否是新的网络模型，和网络模型路径，网络模型记录路径。
     Whether it is a new network model, and the network model path, and the network model record path.
     """
@@ -149,6 +154,15 @@ def select_model(dir: str, is_training=False):
     model_path.mkdir(parents=True, exist_ok=True)
     all_model_path = sorted(item for item in model_path.glob('*/') if item.is_dir())
     all_model_name = [path.name for path in all_model_path]
+
+    if len(specified_model_name) != 0:
+        model_path = model_path / specified_model_name
+        model_path.mkdir(parents=True, exist_ok=True)
+        model_record_path = model_path / "latest.h5"
+        is_new_model = True
+        if model_record_path.exists():
+            is_new_model = False
+        return is_new_model, str(model_path) + "/", str(model_record_path)
 
     if is_training:
         print("请选择想要训练的网络模型。按 <Ctrl-C> 退出。\n"

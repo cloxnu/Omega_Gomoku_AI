@@ -13,7 +13,8 @@ from AI.Network.PolicyValueNet_from_junxiaosong import board_to_xlabel
 class AI_MCTS_Net(MonteCarloTreeSearch, Player):
 
     def __init__(self, policy_value_function, name="AI_MCTS_Net",
-                 is_training=False, search_times=2000, is_output_analysis=True, greedy_value=5.0):
+                 is_training=False, search_times=2000, greedy_value=5.0,
+                 is_output_analysis=True, is_output_running=True):
         """
         AI_MCTS_Net 是一个实现 MonteCarloTreeSearch 的 Player，并通过 policy_value_function 进行落子概率决策。
         AI_MCTS_Net is a Player that implements MonteCarloTreeSearch,
@@ -23,6 +24,7 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         :param is_training: 是否是训练模式。 Whether it is training mode.
         :param search_times: 蒙特卡洛树搜索次数。 Monte Carlo Tree Search times.
         :param is_output_analysis: 是否输出 AI 分析。 Whether to output AI analysis.
+        :param is_output_running: 是否输出 'running'。 Whether to output 'running'.
         """
         super().__init__()
         self.name = name
@@ -30,8 +32,9 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         self.policy_value_function = policy_value_function
         self.is_training = is_training
         self.search_times = search_times  # 树搜索次数。 The search times of tree.
-        self.is_output_analysis = is_output_analysis  # 是否输出 AI 分析。 Whether to output AI analysis.
         self.greedy_value = greedy_value
+        self.is_output_analysis = is_output_analysis  # 是否输出 AI 分析。 Whether to output AI analysis.
+        self.is_output_running = is_output_running  # 是否输出 'running'。 Whether to output 'running'.
 
     def reset(self):
         self.root = TreeNode(prior_prob=1.0)
@@ -200,7 +203,7 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
         """
         for i in range(times):
             board = copy.deepcopy(start_board)
-            if i % 20 == 0:
+            if i % 20 == 0 and self.is_output_running:
                 print("\rrunning: {} / {}".format(i, times), end="")
 
             # 扩展子节点。 Expand node.
