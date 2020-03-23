@@ -1,4 +1,13 @@
-def train_test(network: PolicyValueNet_from_junxiaosong):
+import numpy as np
+
+import Game.Board as BOARD
+from Game.Game import start_until_game_over
+from AI.Network.PolicyValueNet_from_junxiaosong import PolicyValueNet_from_junxiaosong
+from Player.AI_MCTS import AI_MCTS
+from Player.AI_MCTS_Net import AI_MCTS_Net
+
+
+def train_test(network: PolicyValueNet_from_junxiaosong, train_epochs=0):
     batch_size = 512
     temp = 1
     learning_rate = 2e-3  # 学习率。 Learning rate.
@@ -27,7 +36,7 @@ def train_test(network: PolicyValueNet_from_junxiaosong):
         print("训练即将开始，按 <Ctrl-C> 结束训练。\n"
               "The training is about to begin. Press <Ctrl-C> to end the training.\n"
               "-----------------------------------------------")
-        for i in range(100):
+        for i in range(train_epochs):
             # 收集数据数量达到 batch_size。 The amount of collected data reaches batch_size.
 
             print("文件读入中。。。")
@@ -101,9 +110,9 @@ def train_test(network: PolicyValueNet_from_junxiaosong):
             if (i+1) % check_point == 0:
                 print("神经网络评估中。。。 Neural network evaluating...")
 
-                pure_mcts = AI_MCTS(name="evaluate", is_output_analysis=False, greedy_value=5.0, search_times=1000)
+                pure_mcts = AI_MCTS(name="evaluate", is_output_analysis=False, greedy_value=5.0, search_times=1000, is_output_running=False)
                 training_mcts = AI_MCTS_Net(name="training", policy_value_function=network.predict,
-                                            search_times=400, is_output_analysis=False, greedy_value=5.0)
+                                            search_times=400, is_output_analysis=False, greedy_value=5.0, is_output_running=False)
                 win_times, lose_times, draw_times = 0, 0, 0
                 for j in range(10):
                     if j % 2 == 0:
@@ -146,3 +155,8 @@ def train_test(network: PolicyValueNet_from_junxiaosong):
         network.model.save(network.model_dir + "latest.h5")
         print("最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
         f.close()
+
+
+if __name__ == '__main__':
+    network = PolicyValueNet_from_junxiaosong(is_training=True, specified_model_name="train_test")
+    train_test(network, train_epochs=100)
