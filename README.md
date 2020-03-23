@@ -61,6 +61,8 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
     - [Network.py](AI/Network/Network.py) - An abstract class Network, implements by Networks.
     - [PolicyValueNet_from_junxiaosong.py](AI/Network/PolicyValueNet_from_junxiaosong.py) - A policy-value network, composed by [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku).
     - ~~PolicyValueNet_AlphaZero.py - A policy-value network from AlphaZero paper.~~
+- [Train/](Train/)
+  - [train_with_net_junxiaosong.py](Train/train_with_net_junxiaosong.py) - Training script, called by 'train.py'.
 - [Model/](Model/) - Models. Training data will be saved here.
     
     
