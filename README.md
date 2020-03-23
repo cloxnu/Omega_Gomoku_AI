@@ -153,6 +153,20 @@ to train a model.
 
 Either installation way is fairly simple.
 
+#### About the parameters of 'train.py'
+
+If you want to train on some cloud platforms, etc. that need to be quick and convenient and do not allow user input, you may need to run train.py with parameters:
+
+```shell
+$ python train.py 1 my_model 1000
+```
+
+The first parameter '1' means use the '1st' neural network, it must be the serial number of the neural network.
+
+The second parameter 'my_model' means training the model named 'my_model'. If there is, it will automatically train the 'latest.h5' record. If there is no, it will automatically create it.
+
+The third parameter '1000' indicates that the number of self-play is '1000'. If it is less than or equal to 0, it is infinite. It must be an integer.
+
 
 ## Enjoy...
 
