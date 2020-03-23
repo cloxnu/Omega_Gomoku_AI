@@ -57,6 +57,8 @@
     - [Network.py](AI/Network/Network.py) - 抽象类 Network，被神经网络实现。
     - [PolicyValueNet_from_junxiaosong.py](AI/Network/PolicyValueNet_from_junxiaosong.py) - 一个策略价值网络, 作者是 [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku)。
     - ~~PolicyValueNet_AlphaZero.py - AlphaZero 论文描述的策略价值网络。~~
+- [Train/](Train/)
+  - [train_with_net_junxiaosong.py](Train/train_with_net_junxiaosong.py) - 训练脚本，被 'train.py' 调用。
 - [Model/](Model/) - 模型。训练的数据将会保存于此。
     
     
