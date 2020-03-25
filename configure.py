@@ -57,14 +57,18 @@ if __name__ == '__main__':
         break
 
     while True:
-        input2 = input("配置 2：请输入几子连珠 n. (n >= 3)\n"
-                       "Config 2: Please input how many pieces in a row. (n >= 3)\n"
+        input2 = input("配置 2：请输入几子连珠 n. (n >= 3 且 n <= size)\n"
+                       "Config 2: Please input how many pieces in a row. (n >= 3 and n <= size)\n"
                        "n ({}) = ".format(n_in_a_row))
         try:
             input_int2 = n_in_a_row if len(input2) == 0 else int(input2)
             if input_int2 < 3:
                 print("n 应该大于等于 3，请重新输入。\n"
                       "n should be greater than or equal to 3. Please try again.\n")
+                continue
+            if input_int2 > size:
+                print("n 应该小于等于 size，请重新输入。\n"
+                      "n should be less than or equal to size. Please try again.\n")
                 continue
             n_in_a_row = input_int2
         except:

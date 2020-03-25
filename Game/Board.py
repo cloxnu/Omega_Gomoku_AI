@@ -78,6 +78,10 @@ class Board:
         Analyze whether the current situation has a player victory, or a draw, or is not over.
         :return: <tuple (is_over, winner)>
         """
+        # 没地儿下了。 Nowhere to move.
+        if len(self.available_actions) == 0:
+            return True, empty
+
         for piece in coordinates_set(board_size, board_size) - self.available_actions:
             i = piece[0]
             j = piece[1]
@@ -105,9 +109,5 @@ class Board:
                 s = sum([self.board[i - v, j + v] for v in range(n_in_a_row)])
                 if s == o_win or s == x_win:
                     return True, s / n_in_a_row
-
-        # 没地儿下了。 Nowhere to move.
-        if len(self.available_actions) == 0:
-            return True, empty
 
         return False, empty
