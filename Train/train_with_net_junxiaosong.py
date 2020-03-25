@@ -1,16 +1,16 @@
-import numpy as np
-import random
 import collections
 import datetime
 import os
+import random
 
-from console_select import select_yes_or_no
+import numpy as np
 
 import Game.Board as BOARD
+from AI.Network.PolicyValueNet_from_junxiaosong import PolicyValueNet_from_junxiaosong, data_augmentation_new
 from Game.Game import start_until_game_over
-from AI.Network.PolicyValueNet_from_junxiaosong import PolicyValueNet_from_junxiaosong, data_augmentation, data_augmentation_new
 from Player.AI_MCTS import AI_MCTS
 from Player.AI_MCTS_Net import AI_MCTS_Net
+from console_select import select_yes_or_no
 
 
 def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong, allow_user_input=True, round_times=0):
@@ -34,6 +34,8 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong, allow_u
     # The search times of the pure Monte Carlo tree AI.
     pure_mcts_search_times = 1000
 
+    AI_mcts_search_times = 400
+
     # 网络评估胜率。 Network evaluation win rate.
     win_ratio = 0
 
@@ -44,7 +46,7 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong, allow_u
     all_play_data_count = 0
     player = AI_MCTS_Net(policy_value_function=network.predict,
                          is_training=True,
-                         search_times=400,
+                         search_times=AI_mcts_search_times,
                          greedy_value=5.0,
                          is_output_analysis=False,
                          is_output_running=False)
@@ -61,6 +63,9 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong, allow_u
 
     try:
         i = 1
+        print("保存最新模型记录中。。。 Latest model record saving...")
+        network.model.save(network.model_dir + "latest.h5")
+        print("最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
         print("\n训练开始时间 Training start time: {0},\n"
               "训练模型路径 Training model path: {1}\n".
               format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), network.model_dir))
@@ -155,7 +160,7 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong, allow_u
                 pure_mcts = AI_MCTS(name="evaluate", greedy_value=5.0, search_times=pure_mcts_search_times,
                                     is_output_analysis=False, is_output_running=False)
                 training_mcts = AI_MCTS_Net(name="training", policy_value_function=network.predict,
-                                            search_times=400, greedy_value=5.0,
+                                            search_times=AI_mcts_search_times, greedy_value=5.0,
                                             is_output_analysis=False, is_output_running=False)
                 win_times, lose_times, draw_times = 0, 0, 0
                 for j in range(10):
@@ -210,6 +215,8 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong, allow_u
                     pure_mcts_search_times += 1000
                     win_ratio = 0
                     print("恭喜全部获胜，评估难度增加，纯 MCTS AI 选手搜索次数上升为 {}".format(pure_mcts_search_times))
+                else:
+                    print("胜率为 {}，当前纯 MCTS AI 选手搜索次数为 {}".format(current_win_ratio, pure_mcts_search_times))
 
                 print("保存最新模型记录中。。。 Latest model record saving...")
                 network.model.save(network.model_dir + "latest.h5")

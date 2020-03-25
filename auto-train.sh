@@ -1,0 +1,1 @@
+nohup python -u train.py 1 3-24-16:56 5000 > python_out.log 2>&1 &
