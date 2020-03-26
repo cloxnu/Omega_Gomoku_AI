@@ -1,6 +1,6 @@
 [![Starkidstory](Image/starkidstory_title.png)](https://starkidstory.com)
 
-![Header](Image/omega_title.png)
+[![Header](Image/omega_title.png)](https://starkidstory.com/index.php/category/omega/)
 
 # Omega_Gomoku_AI
 
@@ -8,7 +8,7 @@
 
 <p align="center">
 <a href="https://starkidstory.com"><img src="Image/star_badge.png" height=20></a>
-<img src="Image/omega_badge.png" height=20/>
+<a href="https://starkidstory.com/index.php/category/omega/"><img src="Image/omega_badge.png" height=20/></a>
 <br/>
 <a href="https://github.com/CLOXnu/Omega_Gomoku_AI/blob/master/README.zh-cn.md"><img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat"/></a>
 <a href="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI"><img src="https://travis-ci.org/CLOXnu/Omega_Gomoku_AI.svg?branch=master"/></a>
