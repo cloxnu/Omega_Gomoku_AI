@@ -1,0 +1,48 @@
+
+#board {
+    background: burlywood;
+    border-radius: 5px;
+}
+
+#player1-div {
+    float: left;
+    width: 30%;
+    margin-left: 15%;
+    margin-right: 5%;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+}
+
+#player2-div {
+    float: left;
+    width: 30%;
+    margin-left: 5%;
+    margin-right: 15%;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+}
+
+#board-div {
+    position: relative;
+}
+
+#board {
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 0;
+}
+
+#transparent-board {
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 1;
+}
+
+#player1-running, #player2-running {
+    display: none;
+}
+

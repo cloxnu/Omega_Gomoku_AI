@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Omega Gomoku AI.</title>
+    <script src="{{ url_for('static', filename='js/socket.io_2.2.0.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/start.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/start.css') }}">
+</head>
+<body onload="board_init({{ board_size }})">
+    <div style="text-align: center;">
+        <a href="{{ url_for('configure.configure') }}">
+            <input type="button" value="返回配置 Back"></a>
+
+        <br><br>
+        <div id="board-div" style="height: {{ board_size*40 }}px">
+            <canvas id="board" width="{{ board_size*40 }}px" height="{{ board_size*40 }}px">
+                浏览器不支持 canvas </canvas>
+            <canvas id="transparent-board" width="{{ board_size*40 }}px" height="{{ board_size*40 }}px"
+                    onmousemove="mouse_move_on_canvas(event)" onclick="mouse_click_on_canvas(event)"
+                    onmouseout="mouse_out_on_canvas()">
+                浏览器不支持 canvas </canvas>
+        </div>
+
+        <br><br>
+
+        <input id="start-button" type="button" value="开始游戏 Start" onclick="start_game()">
+        <br><br>
+
+        <div id="player1-div">
+            <h4>执黑 Black: {{ player1_name }}</h4>
+            <p id="player1-desc">
+                {% autoescape false %}
+                {{ player1_desc | replace('\n', '<br>') }}
+                {% endautoescape %}
+            </p>
+            <h4 id="player1-running">思考中 running...</h4>
+        </div>
+        <div id="player2-div">
+            <h4>执白 White: {{ player2_name }}</h4>
+            <p id="player2-desc">
+                {% autoescape false %}
+                {{ player2_desc | replace('\n', '<br>') }}
+                {% endautoescape %}
+            </p>
+            <h4 id="player2-running">思考中 running...</h4>
+        </div>
+    </div>
+
+</body>
+</html>

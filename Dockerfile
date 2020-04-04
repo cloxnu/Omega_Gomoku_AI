@@ -2,8 +2,8 @@ FROM tensorflow/tensorflow:2.0.0-py3
 
 WORKDIR /home
 
-COPY ./requirements.txt ./
+COPY ./Omega_Gomoku_AI .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . .
+EXPOSE 5000
 CMD ["bash", "game.sh"]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Omega Gomoku AI.</title>
+    <script src="{{ url_for('static', filename='js/configure.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/configure.css') }}">
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Welcome to Omega Gomoku AI.</h1><br>
+
+        {% macro rows(section) %}
+            <div id="select{{ section }}-1">
+                <h4 id="select{{ section }}-1-title">
+                    {{ section }}-1. 请输入玩家名字。 Please input the name of this player.</h4>
+                <label>它的名字是 It's name is:
+                    <input type="text" id="select{{ section }}-1-input" name="select{{ section }}-1" value="player {{ section }}" required></label><br>
+            </div>
+
+            <div id="select{{ section }}-2">
+                <h4 id="select{{ section }}-2-title">
+                    {{ section }}-2. AI 配置 1：请输入 AI 搜索次数 search times. (times >= 1)<br>
+                    AI Config 1: Please input the AI search times. (times >= 1)</h4>
+                <label>search times =
+                    <input type="number" id="select{{ section }}-2-input" min="1" max="999999" value="2000" name="select{{ section }}-2"></label><br>
+            </div>
+            <div id="select{{ section }}-3">
+                <h4 id="select{{ section }}-3-title">
+                    {{ section }}-3. AI 配置 2：请输入蒙特卡洛树搜索的贪婪值 greedy value. (c > 0)<br>
+                    AI Config 2: Please enter greedy value for Monte Carlo tree search. (c > 0)</h4>
+                <label>c =
+                    <input type="number" id="select{{ section }}-3-input" min="0.1" max="99.9" value="5.0" step="0.1" name="select{{ section }}-3"></label><br>
+            </div>
+            <div id="select{{ section }}-4">
+                <h4 id="select{{ section }}-4-title">
+                    {{ section }}-4. 请选择想要使用的神经网络。 Please select the neural network you want to use.</h4>
+                <label><input type="radio" id="select{{ section }}-4-input" onclick="selected({{ section }}, 4, 1)" name="select{{ section }}-4" value="1">
+                    1: 由 [junxiaosong] 提供的神经网络。</label><br>
+            </div>
+            <div id="select{{ section }}-5">
+                <h4 id="select{{ section }}-5-title">加载中... Loading...</h4>
+{#                <label><input type="radio" id="select{{ section }}-5-input" onclick="sel({{ section }}, 5, 1)" name="select{{ section }}-5" value="1">#}
+{#                    </label><br>#}
+            </div>
+            <div id="select{{ section }}-6">
+                <h4 id="select{{ section }}-6-title">加载中... Loading...</h4>
+{#                <label><input type="radio" id="select{{ section }}-6-input" onclick="sel({{ section }}, 6, 1)" name="select{{ section }}-6" value="1">#}
+{#                    </label><br>#}
+            </div>
+        {% endmacro %}
+
+        <form name="configure" action="{{ url_for('configure.configure') }}" method="post" onsubmit="return validateForm()">
+            <div id="select1">
+                <h3 id="select1-title">1. 请选择先落子玩家。 Please select first player.</h3>
+                <label id="select1-0-1"><input type="radio" onclick="selected(1, 0, 1)" name="select1-0" value="1" required>
+                    人类。 Human.</label><br>
+                <label id="select1-0-2"><input type="radio" onclick="selected(1, 0, 2)" name="select1-0" value="2">
+                    纯蒙特卡洛树搜索的 AI。 AI with pure Monte Carlo tree search.</label><br>
+                <label id="select1-0-3"><input type="radio" onclick="selected(1, 0, 3)" name="select1-0" value="3">
+                    带有神经网络的蒙特卡洛树搜索 AI。 AI with Monte Carlo tree search & neural network.</label><br>
+
+                {{ rows(1) }}
+
+            </div><br>
+
+            <div id="select2">
+                <h3 id="select2-title">2. 请选择后落子玩家。 Please select second player.</h3>
+                <label id="select2-0-1"><input type="radio" onclick="selected(2, 0, 1)" name="select2-0" value="1" required>
+                    人类。 Human.</label><br>
+                <label id="select2-0-2"><input type="radio" onclick="selected(2, 0, 2)" name="select2-0" value="2">
+                    纯蒙特卡洛树搜索的 AI。 AI with pure Monte Carlo tree search.</label><br>
+                <label id="select2-0-3"><input type="radio" onclick="selected(2, 0, 3)" name="select2-0" value="3">
+                    带有神经网络的蒙特卡洛树搜索 AI。 AI with Monte Carlo tree search & neural network.</label><br>
+
+                {{ rows(2) }}
+
+            </div><br>
+
+            <input type="submit" value="运行游戏。 Run.">
+        </form>
+
+    </div>
+</body>
+</html>

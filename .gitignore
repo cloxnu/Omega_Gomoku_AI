@@ -4,6 +4,5 @@
 *.log
 *.model
 __pycache__
-.idea
 /.floyd*
 /floyd.yml
