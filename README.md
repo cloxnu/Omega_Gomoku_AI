@@ -74,8 +74,8 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
   - [web_select.py](Omega_Gomoku_AI/Web/web_select.py) - A class named web_select, used for web configure.
   - [web_start.py](Omega_Gomoku_AI/Web/web_start.py) - The '/start' flask pages, and websocket communication code.
   - [static/](Omega_Gomoku_AI/Web/static/)
-    - [css/](Omega_Gomoku_AI/Web/css/) - css.
-    - [js/](Omega_Gomoku_AI/Web/js/) - js.
+    - [css/](Omega_Gomoku_AI/Web/static/css/) - css.
+    - [js/](Omega_Gomoku_AI/Web/static/js/) - js.
   - [templates/](Omega_Gomoku_AI/Web/templates/) - htmls.
 - [Model/](Omega_Gomoku_AI/Model/) - Models. Training data will be saved here.
     
