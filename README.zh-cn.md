@@ -20,9 +20,17 @@
 
 玩得愉快～～
 
+## 💥 现已可用 💥
+
+![web](Image/Web_running.png)
+
+使用 **web 服务器** 进行可视化游戏现已可用！
+
+版本 1.3 已经推出。
+
 ## 👣 开发路程
 
-✅ 蒙特卡洛树搜索 -> ✅ 神经网络训练 -> 游戏可视化 -> 自定义博弈。
+✅ 蒙特卡洛树搜索 -> ✅ 神经网络训练 -> ✅ 游戏可视化 -> 自定义博弈。
 
 ## 📖 参考文献和感谢
 
@@ -33,33 +41,43 @@
 
 ## 🏠 代码结构
 
-- [start.py](start.py) - 开始游戏，人类 vs AI，AI vs AI， 人类 vs 人类 均可调。
-- [train.py](train.py) - 训练脚本，可用不同网络和保存的模型进行训练。
-- [configure.py](configure.py) - 配置游戏，包括棋盘尺寸，几子连珠，或者蒙特卡洛树的搜索次数。
-- [game.conf](game.conf) - 配置文件。
-- [Function.py](Function.py) - 一些功能函数。
-- [console_select.py](console_select.py) - 一些控制台输入函数.
-- [Game/](Game/)
-  - [Game.py](Game/Game.py) - 抽象类 Game, 被控制台棋盘 (Console board) 和可视化棋盘 (Visual board) 实现。
-  - [Board.py](Game/Board.py) - 游戏棋盘，包括棋盘渲染，执行和结果判定。
-  - [BoardRenderer.py](Game/BoardRenderer.py) - 抽象类 BoardRenderer，被控制台渲染器 (ConsoleRenderer) 和可视化渲染器 (VisualRenderer) 实现。
-  - [ConsoleRenderer.py](Game/ConsoleRenderer.py) - 控制台渲染器，实现类 BoardRenderer。
+- [start.py](Omega_Gomoku_AI/start.py) - 开始游戏，人类 vs AI，AI vs AI， 人类 vs 人类 均可调。
+- [start_from_web.py](Omega_Gomoku_AI/start_from_web.py) - 开启 web 服务器以运行可视化游戏。
+- [train.py](Omega_Gomoku_AI/train.py) - 训练脚本，可用不同网络和保存的模型进行训练。
+- [configure.py](Omega_Gomoku_AI/configure.py) - 配置游戏，包括棋盘尺寸，几子连珠，或者蒙特卡洛树的搜索次数。
+- [game.conf](Omega_Gomoku_AI/game.conf) - 配置文件。
+- [Function.py](Omega_Gomoku_AI/Function.py) - 一些功能函数。
+- [console_select.py](Omega_Gomoku_AI/console_select.py) - 一些控制台输入函数.
+- [Game/](Omega_Gomoku_AI/Game/)
+  - [Game.py](Omega_Gomoku_AI/Game/Game.py) - 开始游戏的脚本。
+  - [Board.py](Omega_Gomoku_AI/Game/Board.py) - 游戏棋盘，包括棋盘渲染，执行和结果判定。
+  - [BoardRenderer.py](Omega_Gomoku_AI/Game/BoardRenderer.py) - 抽象类 BoardRenderer，被控制台渲染器 (ConsoleRenderer) 和可视化渲染器 (VisualRenderer) 实现。
+  - [ConsoleRenderer.py](Omega_Gomoku_AI/Game/ConsoleRenderer.py) - 控制台渲染器，实现类 BoardRenderer。
   - ~~VisualRenderer.py - 可视化渲染器，实现类 BoardRenderer。~~
-- [Player/](Player/)
-  - [Player.py](Player/Player.py) - 抽象类 Player, 被人类玩家 (Human) 和 AI 玩家实现。
-  - [Human.py](Player/Human.py) - 人类玩家，实现类 Player.
-  - [AI_MCTS.py](Player/AI_MCTS.py) - 纯蒙特卡洛树搜索的 AI 玩家，实现类 Player, MonteCarloTreeSearch.
-  - [AI_MCTS_Net.py](Player/AI_MCTS_Net.py) - 蒙特卡洛树搜索 + 神经网络 AI 玩家，实现类 Player, MonteCarloTreeSearch.
-- [AI/](Player/AI/) - AIs.
-  - [MonteCarloTreeSearch.py](AI/MonteCarloTreeSearch.py) - 抽象类 MonteCarloTreeSearch，被所有使用蒙特卡洛树搜索的 AI 实现。
-  - [MonteCarloTreeNode.py](AI/MonteCarloTreeNode.py) - 蒙特卡洛树节点的基类。
-  - [Network/](AI/Network/) - 神经网络。
-    - [Network.py](AI/Network/Network.py) - 抽象类 Network，被神经网络实现。
-    - [PolicyValueNet_from_junxiaosong.py](AI/Network/PolicyValueNet_from_junxiaosong.py) - 一个策略价值网络, 作者是 [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku)。
+- [Player/](Omega_Gomoku_AI/Player/)
+  - [Player.py](Omega_Gomoku_AI/Player/Player.py) - 抽象类 Player, 被人类玩家 (Human) 和 AI 玩家实现。
+  - [Human.py](Omega_Gomoku_AI/Player/Human.py) - 人类玩家，实现类 Player.
+  - [AI_MCTS.py](Omega_Gomoku_AI/Player/AI_MCTS.py) - 纯蒙特卡洛树搜索的 AI 玩家，实现类 Player, MonteCarloTreeSearch.
+  - [AI_MCTS_Net.py](Omega_Gomoku_AI/Player/AI_MCTS_Net.py) - 蒙特卡洛树搜索 + 神经网络 AI 玩家，实现类 Player, MonteCarloTreeSearch.
+- [AI/](Omega_Gomoku_AI/Player/AI/) - AIs.
+  - [MonteCarloTreeSearch.py](Omega_Gomoku_AI/AI/MonteCarloTreeSearch.py) - 抽象类 MonteCarloTreeSearch，被所有使用蒙特卡洛树搜索的 AI 实现。
+  - [MonteCarloTreeNode.py](Omega_Gomoku_AI/AI/MonteCarloTreeNode.py) - 蒙特卡洛树节点的基类。
+  - [Network/](Omega_Gomoku_AI/AI/Network/) - 神经网络。
+    - [Network.py](Omega_Gomoku_AI/AI/Network/Network.py) - 抽象类 Network，被神经网络实现。
+    - [PolicyValueNet_from_junxiaosong.py](Omega_Gomoku_AI/AI/Network/PolicyValueNet_from_junxiaosong.py) - 一个策略价值网络, 作者是 [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku)。
     - ~~PolicyValueNet_AlphaZero.py - AlphaZero 论文描述的策略价值网络。~~
-- [Train/](Train/)
-  - [train_with_net_junxiaosong.py](Train/train_with_net_junxiaosong.py) - 训练脚本，被 'train.py' 调用。
-- [Model/](Model/) - 模型。训练的数据将会保存于此。
+- [Train/](Omega_Gomoku_AI/Train/)
+  - [train_with_net_junxiaosong.py](Omega_Gomoku_AI/Train/train_with_net_junxiaosong.py) - 训练脚本，被 'train.py' 调用。
+- [Web/](Omega_Gomoku_AI/Web/)
+  - [web_configure.py](Omega_Gomoku_AI/Web/web_configure.py) - '/configure' flask 页面。
+  - [web_game_thread.py](Omega_Gomoku_AI/Web/web_game_thread.py) - 使用多线程的 web 游戏脚本。
+  - [web_select.py](Omega_Gomoku_AI/Web/web_select.py) - 类 web_select，用作 web 配置。
+  - [web_start.py](Omega_Gomoku_AI/Web/web_start.py) - '/start' flask 页面，和 websocket 代码。
+  - [static/](Omega_Gomoku_AI/Web/static/)
+    - [css/](Omega_Gomoku_AI/Web/static/css/) - css.
+    - [js/](Omega_Gomoku_AI/Web/static/js/) - js.
+  - [templates/](Omega_Gomoku_AI/Web/templates/) - htmls.
+- [Model/](Omega_Gomoku_AI/Model/) - 模型。训练的数据将会保存于此。
     
     
 ## 用法
@@ -82,7 +100,17 @@ $ docker run -it clox/omega_gomoku_ai:latest
 
 在 `-it` 后添加 `--rm` 可以在容器退出后自动删除容器。
 
-以上是最简单版本的 Docker 容器配置方式，但如果你想要训练网络且希望将模型保存到本地，那么需要添加 `-v` 参数来挂载本地目录。
+以上是最简单版本的 Docker 容器配置方式，
+
+如果你想要使用 web 服务器渲染可视化游戏，记得开启端口映射：
+
+```shell
+$ docker run -it -p 5000:5000 clox/omega_gomoku_ai:latest
+```
+
+除了映射到 5000 端口外，你还可以更改冒号前的 '5000' 为其他值。
+
+如果你想要训练网络且希望将模型保存到本地，那么需要添加 `-v` 参数来挂载本地目录。
 
 ```shell
 $ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:latest
