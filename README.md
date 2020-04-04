@@ -20,9 +20,13 @@ This repo provides a ~~visual game interface~~, easy-to-use training process, an
 
 Enjoy yourself ~~~
 
-## ⬆️ Updates
+## 💥 Available now 💥
 
-1.2 is available, training.py etc. were added.
+![web](Image/Web_running.png)
+
+Run visual game using **web server** is available now!
+
+1.3 is available, visual game etc. were added.
 
 ## 👣 Next step
 
@@ -37,33 +41,43 @@ About the algorithm, **Omega_Gomoku_AI** refers to this article: [Monte Carlo Tr
 
 ## 🏠 Code structure
 
-- [start.py](start.py) - Start the game, human vs AI, or human vs human, or AI vs AI.
-- [train.py](train.py) - The training script, which can be used to train with different networks and saved models.
-- [configure.py](configure.py) - Configure the game, including board size, n-in-a-row, and Monte Carlo Tree search times.
-- [game.conf](game.conf) - Configuration file.
-- [Function.py](Function.py) - Some functions.
-- [console_select.py](console_select.py) - Some console input functions.
-- [Game/](Game/)
-  - [Game.py](Game/Game.py) - An abstract class named Game, implemented by Console board and Visual board.
-  - [Board.py](Game/Board.py) - Game board, including board rendering, execution and result determination.
-  - [BoardRenderer.py](Game/BoardRenderer.py) - An abstract class named BoardRenderer, implemented by ConsoleRenderer and VisualRenderer.
-  - [ConsoleRenderer.py](Game/ConsoleRenderer.py) - implements class BoardRenderer.
+- [start.py](Omega_Gomoku_AI/start.py) - Start the game, human vs AI, or human vs human, or AI vs AI.
+- [start_from_web.py](Omega_Gomoku_AI/start_from_web.py) - Start the visual game, and the web server.
+- [train.py](Omega_Gomoku_AI/train.py) - The training script, which can be used to train with different networks and saved models.
+- [configure.py](Omega_Gomoku_AI/configure.py) - Configure the game, including board size, n-in-a-row, and Monte Carlo Tree search times.
+- [game.conf](Omega_Gomoku_AI/game.conf) - Configuration file.
+- [Function.py](Omega_Gomoku_AI/Function.py) - Some functions.
+- [console_select.py](Omega_Gomoku_AI/console_select.py) - Some console input functions.
+- [Game/](Omega_Gomoku_AI/Game/)
+  - [Game.py](Omega_Gomoku_AI/Game/Game.py) - A script to start the game.
+  - [Board.py](Omega_Gomoku_AI/Game/Board.py) - Game board, including board rendering, execution and result determination.
+  - [BoardRenderer.py](Omega_Gomoku_AI/Game/BoardRenderer.py) - An abstract class named BoardRenderer, implemented by ConsoleRenderer and VisualRenderer.
+  - [ConsoleRenderer.py](Omega_Gomoku_AI/Game/ConsoleRenderer.py) - implements class BoardRenderer.
   - ~~VisualRenderer.py - implements class BoardRenderer.~~
-- [Player/](Player/)
-  - [Player.py](Player/Player.py) - An abstract class named Player, implemented by Human and AIs.
-  - [Human.py](Player/Human.py) - Human player, implements class Game.
-  - [AI_MCTS.py](Player/AI_MCTS.py) - AI player with pure MCTS, implements class Player and MonteCarloTreeSearch.
-  - [AI_MCTS_Net.py](Player/AI_MCTS_Net.py) - AI player with MCTS and neural network, implements class Player and MonteCarloTreeSearch.
-- [AI/](AI/) - AIs.
-  - [MonteCarloTreeSearch.py](AI/MonteCarloTreeSearch.py) - An abstract class MonteCarloTreeSearch, implements by all AIs using MCTS.
-  - [MonteCarloTreeNode.py](AI/MonteCarloTreeNode.py) - Base class for nodes in Monte Carlo Tree.
-  - [Network/](AI/Network/) - Networks.
-    - [Network.py](AI/Network/Network.py) - An abstract class Network, implements by Networks.
-    - [PolicyValueNet_from_junxiaosong.py](AI/Network/PolicyValueNet_from_junxiaosong.py) - A policy-value network, composed by [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku).
+- [Player/](Omega_Gomoku_AI/Player/)
+  - [Player.py](Omega_Gomoku_AI/Player/Player.py) - An abstract class named Player, implemented by Human and AIs.
+  - [Human.py](Omega_Gomoku_AI/Player/Human.py) - Human player, implements class Game.
+  - [AI_MCTS.py](Omega_Gomoku_AI/Player/AI_MCTS.py) - AI player with pure MCTS, implements class Player and MonteCarloTreeSearch.
+  - [AI_MCTS_Net.py](Omega_Gomoku_AI/Player/AI_MCTS_Net.py) - AI player with MCTS and neural network, implements class Player and MonteCarloTreeSearch.
+- [AI/](Omega_Gomoku_AI/AI/) - AIs.
+  - [MonteCarloTreeSearch.py](Omega_Gomoku_AI/AI/MonteCarloTreeSearch.py) - An abstract class named MonteCarloTreeSearch, implements by all AIs using MCTS.
+  - [MonteCarloTreeNode.py](Omega_Gomoku_AI/AI/MonteCarloTreeNode.py) - Base class for nodes in Monte Carlo Tree.
+  - [Network/](Omega_Gomoku_AI/AI/Network/) - Networks.
+    - [Network.py](Omega_Gomoku_AI/AI/Network/Network.py) - An abstract class Network, implements by Networks.
+    - [PolicyValueNet_from_junxiaosong.py](Omega_Gomoku_AI/AI/Network/PolicyValueNet_from_junxiaosong.py) - A policy-value network, composed by [@junxiaosong](https://github.com/junxiaosong/AlphaZero_Gomoku).
     - ~~PolicyValueNet_AlphaZero.py - A policy-value network from AlphaZero paper.~~
-- [Train/](Train/)
+- [Train/](Omega_Gomoku_AI/Train/)
   - [train_with_net_junxiaosong.py](Train/train_with_net_junxiaosong.py) - Training script, called by 'train.py'.
-- [Model/](Model/) - Models. Training data will be saved here.
+- [Web/](Omega_Gomoku_AI/Web/)
+  - [web_configure.py](Omega_Gomoku_AI/Web/web_configure.py) - The '/configure' flask pages.
+  - [web_game_thread.py](Omega_Gomoku_AI/Web/web_game_thread.py) - The game script, using multithreading.
+  - [web_select.py](Omega_Gomoku_AI/Web/web_select.py) - A class named web_select, used for web configure.
+  - [web_start.py](Omega_Gomoku_AI/Web/web_start.py) - The '/start' flask pages, and websocket communication code.
+  - [static/](Omega_Gomoku_AI/Web/static/)
+    - [css/](Omega_Gomoku_AI/Web/css/) - css.
+    - [js/](Omega_Gomoku_AI/Web/js/) - js.
+  - [templates/](Omega_Gomoku_AI/Web/templates/) - htmls.
+- [Model/](Omega_Gomoku_AI/Model/) - Models. Training data will be saved here.
     
     
     
