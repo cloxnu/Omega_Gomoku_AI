@@ -103,6 +103,14 @@ Add `--rm` after `-it` can automatically remove the container when it exits.
 
 That's all, the above is the simplest usage, It's a really simple way!
 
+If you want to render the visual game using web server in Docker, remember to enable port mapping:
+
+```shell
+$ docker run -it -p 5000:5000 clox/omega_gomoku_ai:latest
+```
+
+In addition to mapping to port 5000, you can also change '5000' before the colon to other values.
+
 It is worth noting that if you want to save the training data on your own machine, you need to add `-v` to mount directory.
 
 ```shell
