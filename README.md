@@ -30,7 +30,7 @@ Run visual game using **web server** is available now!
 
 ## 👣 Next step
 
-✅ Monte Carlo tree -> ✅ Train models -> Visual game interface -> Custom battle.
+✅ Monte Carlo tree -> ✅ Train models -> ✅ Visual game interface -> Custom battle.
 
 ## 📖 References & thanks
 
