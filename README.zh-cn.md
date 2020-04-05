@@ -220,6 +220,12 @@ $ python train.py 1 my_model 1000
 
 ![training](Image/training.png)
 
+#### 在 web 上开启可视化棋盘
+
+在打开 web 服务器运行游戏之后，你可以在浏览器的地址栏输入 http://127.0.0.1:5000 或 http://0.0.0.0:5000 进行游戏。
+
+**Chrome** 和 **Safari** 通过了浏览器支持测试。
+
 
 ## 许可
 
