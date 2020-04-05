@@ -18,12 +18,14 @@ socket.on('board_init', function (board_size) {
 
 socket.on('game_start', function () {
     human_player = 0;
+    board_steps.clear();
     console.log('game start');
     document.getElementById("start-button").value = "停止游戏 Stop";
 });
 
 socket.on('game_stop', function () {
     human_player = 0;
+    board_steps.clear();
     console.log('game stop');
     document.getElementById("start-button").value = "开始游戏 Start";
 });
