@@ -176,6 +176,12 @@ $ python train.py
 
 to train a model.
 
+```shell
+$ python start_from_web.py
+```
+
+to start the visual game using web server.
+
 Either installation way is fairly simple.
 
 #### About the parameters of 'train.py'
