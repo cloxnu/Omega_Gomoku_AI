@@ -120,26 +120,50 @@ function selected(section, row, value) {
 
 
 function validateForm() {
-    const select0 = document.forms["configure"]["select1-0"].value;
-    const select1 = document.forms["configure"]["select1-1"].value;
-    const select2 = document.forms["configure"]["select1-2"].value;
-    const select3 = document.forms["configure"]["select1-3"].value;
-    const select4 = document.forms["configure"]["select1-4"].value;
-    const select5 = document.forms["configure"]["select1-5"].value;
-    const select6 = document.forms["configure"]["select1-6"].value;
-    if (select0 === "" || select1 === "")
+    for (let i = 1; i <= 2; i++)
     {
-        alert("select 0 or 1 unfilled.");
-        return false;
+        const select0 = document.forms["configure"]["select" + i + "-0"].value;
+        const select1 = document.forms["configure"]["select" + i + "-1"].value;
+        if (select0 === "" || select1 === "")
+        {
+            alert("选项 " + i + " 或 " + i + "-1 未填写\n" +
+                "select " + i + " or " + i + "-1 unfilled.");
+            return false;
+        }
+        if (select0 !== "1")
+        {
+            try {
+                const select2 = document.forms["configure"]["select" + i + "-2"].value;
+                const select3 = document.forms["configure"]["select" + i + "-3"].value;
+                if (select2 === "" || select3 === "") {
+                    alert("选项 " + i + "-2 或 " + i + "-3 未填写\n" +
+                        "select " + i + "-2 or " + i + "-3 unfilled.");
+                    return false;
+                }
+            } catch (e) {
+                alert("选项 " + i + "-2 或 " + i + "-3 未填写\n" +
+                    "select " + i + "-2 or " + i + "-3 unfilled.");
+                return false;
+            }
+        }
+        if (select0 === "3")
+        {
+            try {
+                const select4 = document.forms["configure"]["select" + i + "-4"].value;
+                const select5 = document.forms["configure"]["select" + i + "-5"].value;
+                const select6 = document.forms["configure"]["select" + i + "-6"].value;
+                if (select4 === "" || select5 === "" || select6 === "") {
+                    alert("选项 " + i + "-4 或 " + i + "-5 或 " + i + "-6 未填写\n" +
+                        "select " + i + "-4 or " + i + "-5 or " + i + "-6 unfilled.");
+                    return false;
+                }
+            } catch (e) {
+                alert("选项 " + i + "-4 或 " + i + "-5 或 " + i + "-6 未填写\n" +
+                    "select " + i + "-4 or " + i + "-5 or " + i + "-6 unfilled.");
+                return false;
+            }
+
+        }
     }
-    if (select0 !== "1" && (select2 === "" || select3 === ""))
-    {
-        alert("select 2 or 3 unfilled.");
-        return false;
-    }
-    if (select0 === "3" && (select4 === "" || select5 === "" || select6 === ""))
-    {
-        alert("select 4 or 5 or 6 unfilled.");
-        return false;
-    }
+
 }
