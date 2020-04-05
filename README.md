@@ -223,6 +223,12 @@ Training is available now.
 
 ![training](Image/training.png)
 
+#### Enjoy on the web
+
+After opening the web server to run the game, open your browser and enter http://127.0.0.1:5000 or http://0.0.0.0:5000 to enjoy the game.
+
+**Chrome** and **Safari** passed the support test.
+
 
 ## License
 
