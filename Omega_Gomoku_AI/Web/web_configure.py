@@ -37,19 +37,22 @@ def ready_to_start(player_conf: (dict, dict)):
             player[player_index] = AI_MCTS(name=name, search_times=search_times, greedy_value=greedy_value,
                                            is_output_analysis=False, is_output_running=False)
         elif conf[0] == "3":  # AI with neural network
+            search_times = 2000 if conf[2] == -1 else int(conf[2])
+            greedy_value = 0.5 if conf[3] == -1 else float(conf[3])
             model_select[player_index].set_record_path(record_index=int(conf[6]) - 1)
             if conf[4] == "1":  # network
                 policy_value_net = PolicyValueNet_from_junxiaosong(
-                    is_new_model=False,
+                    is_new_model=False, is_in_thread=True,
                     model_dir=model_select[player_index].selected_model_path,
                     model_record_path=model_select[player_index].selected_record_path)
             else:
                 policy_value_net = PolicyValueNet_from_junxiaosong(
-                    is_new_model=False,
+                    is_new_model=False, is_in_thread=True,
                     model_dir=model_select[player_index].selected_model_path,
                     model_record_path=model_select[player_index].selected_record_path)
             player[player_index] = AI_MCTS_Net(name=name, policy_value_function=policy_value_net.predict,
                                                board_to_xlabel=policy_value_net.board_to_xlabel,
+                                               search_times=search_times, greedy_value=greedy_value,
                                                is_output_analysis=False, is_output_running=False)
 
 

@@ -1,12 +1,15 @@
 from AI.Network.Network import Network
 
 import numpy as np
-import keras
-from keras import Input
-from keras import layers
-from keras import optimizers
-from keras import regularizers
-import keras.backend as K
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import Input
+from tensorflow.keras import layers
+from tensorflow.keras import optimizers
+from tensorflow.keras import regularizers
+import tensorflow.keras.backend as K
+
+tf.compat.v1.disable_eager_execution()
 
 import Game.Board as BOARD
 from Function import get_data_augmentation
@@ -79,16 +82,24 @@ class PolicyValueNet_from_junxiaosong(Network):
     Network by @junxiaosong.
     """
 
-    def __init__(self, is_new_model, model_dir, model_record_path=""):
+    def __init__(self, is_new_model, model_dir, model_record_path="", is_in_thread=False):
         self.l2_const = 1e-4
 
         self.model_dir = model_dir
         self.model_record_path = model_record_path
 
+        self.is_in_thread = is_in_thread
+        self.session = tf.compat.v1.Session(graph=tf.Graph())
+
         if is_new_model:
             self.create_net()
         else:
-            self.model = keras.models.load_model(self.model_record_path)
+            if is_in_thread:
+                with self.session.graph.as_default():
+                    tf.compat.v1.keras.backend.set_session(self.session)
+                    self.model = keras.models.load_model(self.model_record_path)
+            else:
+                self.model = keras.models.load_model(self.model_record_path)
 
     def __str__(self):
         return "PolicyValueNet_from_junxiaosong"
@@ -100,20 +111,20 @@ class PolicyValueNet_from_junxiaosong(Network):
         """
 
         net = input_net = Input((4, BOARD.board_size, BOARD.board_size))
-        net = layers.Conv2D(filters=32, kernel_size=(3, 3), padding="same", data_format="channels_first",
+        net = layers.Conv2D(filters=32, kernel_size=(3, 3), padding="same", data_format="channels_last",
                             activation="relu", kernel_regularizer=regularizers.l2(self.l2_const))(net)
-        net = layers.Conv2D(filters=64, kernel_size=(3, 3), padding="same", data_format="channels_first",
+        net = layers.Conv2D(filters=64, kernel_size=(3, 3), padding="same", data_format="channels_last",
                             activation="relu", kernel_regularizer=regularizers.l2(self.l2_const))(net)
-        net = layers.Conv2D(filters=128, kernel_size=(3, 3), padding="same", data_format="channels_first",
+        net = layers.Conv2D(filters=128, kernel_size=(3, 3), padding="same", data_format="channels_last",
                             activation="relu", kernel_regularizer=regularizers.l2(self.l2_const))(net)
 
-        policy_net = layers.Conv2D(filters=4, kernel_size=(1, 1), data_format="channels_first",
+        policy_net = layers.Conv2D(filters=4, kernel_size=(1, 1), data_format="channels_last",
                                    activation="relu", kernel_regularizer=regularizers.l2(self.l2_const))(net)
         policy_net = layers.Flatten()(policy_net)
         policy_net = layers.Dense(BOARD.board_size * BOARD.board_size, activation="softmax",
                                   kernel_regularizer=regularizers.l2(self.l2_const))(policy_net)
 
-        value_net = layers.Conv2D(filters=2, kernel_size=(1, 1), data_format="channels_first",
+        value_net = layers.Conv2D(filters=2, kernel_size=(1, 1), data_format="channels_last",
                                   activation="relu", kernel_regularizer=regularizers.l2(self.l2_const))(net)
         value_net = layers.Flatten()(value_net)
         value_net = layers.Dense(64, kernel_regularizer=regularizers.l2(self.l2_const))(value_net)
@@ -172,6 +183,7 @@ class PolicyValueNet_from_junxiaosong(Network):
         values_output = np.array(values)
 
         K.set_value(self.model.optimizer.lr, learning_rate)
+
         self.model.fit(board_input, [probs_output, values_output],
                        batch_size=len(x_label), verbose=0)
 
@@ -186,7 +198,14 @@ class PolicyValueNet_from_junxiaosong(Network):
         board_input = self.board_to_xlabel(board)
         board_input = board_input.reshape((-1, 4, BOARD.board_size, BOARD.board_size))
 
-        probs, value = self.model.predict_on_batch(board_input)
+        if self.is_in_thread:
+            with self.session.graph.as_default():
+                tf.compat.v1.keras.backend.set_session(self.session)
+                probs, value = self.model.predict_on_batch(board_input)
+        else:
+            probs, value = self.model.predict_on_batch(board_input)
+
+        probs = np.array(probs)
         probs = probs.reshape((BOARD.board_size, BOARD.board_size))
 
         action_probs = []
@@ -220,5 +239,7 @@ class PolicyValueNet_from_junxiaosong(Network):
         :return: 熵。 The entropy.
         """
         board_input = np.array(x_label)
+
         probs, _ = self.model.predict_on_batch(board_input)
+
         return -np.mean(np.sum(probs * np.log(probs + 1e-10), axis=1))

@@ -80,8 +80,10 @@ def send_game_stop():
 
 
 def send_board_step(current_player, action):
+    i, j = action
+    action = int(i), int(j)
     context = {
-        'player': 1 if current_player == BOARD.o else 2,
+        'player': current_player,
         'action': action
     }
     socket_io.emit('board_step', context)

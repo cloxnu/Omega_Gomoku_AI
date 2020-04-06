@@ -1,12 +1,15 @@
 from AI.Network.Network import Network
 
 import numpy as np
-import keras
-from keras import Input
-from keras import layers
-from keras import optimizers
-from keras import regularizers
-import keras.backend as K
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import Input
+from tensorflow.keras import layers
+from tensorflow.keras import optimizers
+from tensorflow.keras import regularizers
+import tensorflow.keras.backend as K
+
+tf.compat.v1.disable_eager_execution()
 
 import Game.Board as BOARD
 from Function import get_data_augmentation
