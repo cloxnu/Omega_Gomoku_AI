@@ -16,7 +16,7 @@
 
 **Omega_Gomoku_AI** 不仅用于五子棋游戏，你还可以自定义棋盘大小，以及几子连珠这样的游戏规则。例如井字棋，就是个 3 * 3 大小的棋盘，三子连珠。
 
-此仓库提供~~可视化游戏界面~~，易用的训练过程，以及易于理解的代码。
+此仓库提供可视化游戏界面，易用的训练过程，以及易于理解的代码。
 
 玩得愉快～～
 
@@ -123,7 +123,8 @@ $ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:latest
 > - 此 Docker 镜像的[主页 (clox/omega_gomoku_ai)](https://hub.docker.com/r/clox/omega_gomoku_ai)。
 > - Docker 镜像的压缩大小约为 **456 MB**.
 > - 此 Docker 镜像基于 [tensorflow/tensorflow:2.0.0-py3](https://hub.docker.com/layers/tensorflow/tensorflow/2.0.0-py3/images/sha256-0b236338fac6c3361cf3ae1448f8c053994e260c1edc4fa63ed80adb3045abb2?context=explore).
-> - 如果你觉得 `docker pull` 的速度太慢，这里是中科大的 [Docker 加速器](http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker)。
+> - 使用 Docker，无需将此仓库 clone 到本地。
+> - 如果你觉得 `docker pull` 的速度太慢，这里是中科大的 [Docker Hub 镜像缓存源](http://mirrors.ustc.edu.cn/help/dockerhub.html)。
 
 #### 使用 Docker 运行最简单版本的示例
 
@@ -154,23 +155,29 @@ $ bash game.sh
 
 就够了。或者，分开运行：
 
+配置游戏脚本：
+
 ```shell
 $ python configure.py
 ```
 
-来配置游戏，运行：
+运行开始游戏脚本：
 
 ```shell
 $ python start.py
 ```
 
-来开始游戏。
+运行训练网络脚本：
 
 ```shell
 $ python train.py
 ```
 
-来训练网络。
+运行使用 web 服务器渲染可视化游戏脚本：
+
+```shell
+$ python start_from_web.py
+```
 
 无论何种方式都相当简单。
 
@@ -212,6 +219,12 @@ $ python train.py 1 my_model 1000
 训练已经开放。
 
 ![training](Image/training.png)
+
+#### 在 web 上开启可视化棋盘
+
+在打开 web 服务器运行游戏之后，你可以在浏览器的地址栏输入 http://127.0.0.1:5000 或 http://0.0.0.0:5000 进行游戏。
+
+**Chrome** 和 **Safari** 通过了浏览器支持测试。
 
 
 ## 许可

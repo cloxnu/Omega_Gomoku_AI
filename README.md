@@ -16,7 +16,7 @@
 
 **Omega_Gomoku_AI** is not only used for Gomoku game, but you can also customize the size of the board and an n-in-a-row game. Tic-tac-toe, for example, is a 3-in-a-row game, and played on a board of size 3.
 
-This repo provides a ~~visual game interface~~, easy-to-use training process, and easy-to-understand code. 
+This repo provides a visual game interface, easy-to-use training process, and easy-to-understand code. 
 
 Enjoy yourself ~~~
 
@@ -126,7 +126,8 @@ That's all, It's a really simple way!
 > - [Homepage (clox/omega_gomoku_ai)](https://hub.docker.com/r/clox/omega_gomoku_ai) of this docker image.
 > - The compressed size of the Docker image is about **456 MB**.
 > - The Docker image is based on [tensorflow/tensorflow:2.0.0-py3](https://hub.docker.com/layers/tensorflow/tensorflow/2.0.0-py3/images/sha256-0b236338fac6c3361cf3ae1448f8c053994e260c1edc4fa63ed80adb3045abb2?context=explore).
-> - [Docker accelerator](http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker) in China.
+> - If you use Docker, you do not need to clone this repo to your local machine.
+> - [Docker Hub image cache](http://mirrors.ustc.edu.cn/help/dockerhub.html) in China.
 
 #### Example of running the simplest version with Docker
 
@@ -175,6 +176,12 @@ $ python train.py
 
 to train a model.
 
+```shell
+$ python start_from_web.py
+```
+
+to start the visual game using web server.
+
 Either installation way is fairly simple.
 
 #### About the parameters of 'train.py'
@@ -215,6 +222,12 @@ Will, AI with MCTS + neural network can solve this problem.
 Training is available now.
 
 ![training](Image/training.png)
+
+#### Enjoy on the web
+
+After opening the web server to run the game, open your browser and enter http://127.0.0.1:5000 or http://0.0.0.0:5000 to enjoy the game.
+
+**Chrome** and **Safari** passed the support test.
 
 
 ## License
