@@ -9,10 +9,11 @@ from tensorflow.keras import optimizers
 from tensorflow.keras import regularizers
 import tensorflow.keras.backend as K
 
-tf.compat.v1.disable_eager_execution()
-
 import Game.Board as BOARD
 from Function import get_data_augmentation
+
+# https://github.com/CLOXnu/Omega_Gomoku_AI/issues/2
+tf.compat.v1.disable_eager_execution()
 
 
 def data_augmentation_new(x_label, y_label):
@@ -199,6 +200,7 @@ class PolicyValueNet_from_junxiaosong(Network):
         board_input = board_input.reshape((-1, 4, BOARD.board_size, BOARD.board_size))
 
         if self.is_in_thread:
+            # https://github.com/CLOXnu/Omega_Gomoku_AI/issues/1
             with self.session.graph.as_default():
                 tf.compat.v1.keras.backend.set_session(self.session)
                 probs, value = self.model.predict_on_batch(board_input)
