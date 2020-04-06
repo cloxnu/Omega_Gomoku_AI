@@ -121,7 +121,7 @@ $ docker run -it -v [Path]:/home/Model clox/omega_gomoku_ai:latest
 > *PS:*
 
 > - 此 Docker 镜像的[主页 (clox/omega_gomoku_ai)](https://hub.docker.com/r/clox/omega_gomoku_ai)。
-> - Docker 镜像的压缩大小约为 **456 MB**.
+> - Docker 镜像的压缩大小约为 **428 MB**.
 > - 此 Docker 镜像基于 [tensorflow/tensorflow:2.0.0-py3](https://hub.docker.com/layers/tensorflow/tensorflow/2.0.0-py3/images/sha256-0b236338fac6c3361cf3ae1448f8c053994e260c1edc4fa63ed80adb3045abb2?context=explore).
 > - 使用 Docker，无需将此仓库 clone 到本地。
 > - 如果你觉得 `docker pull` 的速度太慢，这里是中科大的 [Docker Hub 镜像缓存源](http://mirrors.ustc.edu.cn/help/dockerhub.html)。

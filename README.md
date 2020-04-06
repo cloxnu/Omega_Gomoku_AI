@@ -124,7 +124,7 @@ That's all, It's a really simple way!
 > *PS:*
 
 > - [Homepage (clox/omega_gomoku_ai)](https://hub.docker.com/r/clox/omega_gomoku_ai) of this docker image.
-> - The compressed size of the Docker image is about **456 MB**.
+> - The compressed size of the Docker image is about **428 MB**.
 > - The Docker image is based on [tensorflow/tensorflow:2.0.0-py3](https://hub.docker.com/layers/tensorflow/tensorflow/2.0.0-py3/images/sha256-0b236338fac6c3361cf3ae1448f8c053994e260c1edc4fa63ed80adb3045abb2?context=explore).
 > - If you use Docker, you do not need to clone this repo to your local machine.
 > - [Docker Hub image cache](http://mirrors.ustc.edu.cn/help/dockerhub.html) in China.
