@@ -7,6 +7,8 @@ from AI.MonteCarloTreeSearch import MonteCarloTreeSearch
 from AI.MonteCarloTreeNode import TreeNode
 from Player.Player import Player
 
+import time
+
 
 class AI_MCTS_Net(MonteCarloTreeSearch, Player):
 
@@ -221,8 +223,9 @@ class AI_MCTS_Net(MonteCarloTreeSearch, Player):
                 if is_stop():
                     running_output_function("游戏停止 Game stopped.")
                     return
-            if i % 100 == 0 and running_output_function is not None:
+            if i % 50 == 0 and running_output_function is not None:
                 running_output_function("{} / {}".format(i, times))
+                time.sleep(0.01)
             if i % 20 == 0 and self.is_output_running:
                 print("\rrunning: {} / {}".format(i, times), end="")
 
