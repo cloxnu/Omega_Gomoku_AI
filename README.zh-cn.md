@@ -153,7 +153,9 @@ $ pip install -r requirements.txt
 $ bash game.sh
 ```
 
-就够了。或者，分开运行：
+就够了。使用 PC 运行文件 `game.sh`。
+
+或者，分开运行：
 
 配置游戏脚本：
 

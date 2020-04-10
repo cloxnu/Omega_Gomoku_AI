@@ -225,6 +225,7 @@ def train_with_net_junxiaosong(network: PolicyValueNet_from_junxiaosong, allow_u
                 print("最新模型记录已保存至 The latest model record saved to: \'{}\'".format(network.model_dir + "latest.h5"))
                 if is_output_log:
                     log_file.write("最新模型记录已保存至 The latest model record saved to: \'{}\'\n".format(network.model_dir + "latest.h5"))
+                    log_file.write("[{}]\n\n".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
             if i == round_times:
                 raise KeyboardInterrupt
             i += 1

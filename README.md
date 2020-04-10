@@ -150,13 +150,15 @@ $ pip install -r requirements.txt
 
 If necessary, the command 'pip' should be changed to 'pip3'.
 
-In Mac/Linux, just run this:
+In Mac/Linux, just run:
 
 ```shell
 $ bash game.sh
 ```
 
-is enough. Or, you can also run:
+is enough, execute the file `game.sh` in PC.
+
+Or, you can also run:
 
 ```shell
 $ python configure.py
